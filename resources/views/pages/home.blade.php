@@ -3,11 +3,12 @@
 @section('pageTitle', 'Trang chủ')
 
 @section('content')
+{{--    {{ Breadcrumbs::render('pages.home', $home) }}--}}
     @foreach($allCategories as $caterory)
         <div class="original-label lastest-products-label">
             <span><h3>{{ $caterory->name }}</h3></span>
         </div>
-        <div class="home-grid">
+        <div class="home-grid owl-carousel owl-theme">
             @foreach($product->where('category_id', $caterory->id) as $item)
                 <div class="grid-item">
                     <a class="item-link" href="" title="{{ $item->name }}">
