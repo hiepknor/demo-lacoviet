@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,9 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $globalParams = [
-            'allCategories' => Category::get(),
-        ];
-        return View::share('globalParams', $globalParams);
+        //
     }
 }
