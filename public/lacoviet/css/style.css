@@ -403,7 +403,7 @@ main {
 .product-description .description-label h3 {
     text-transform: unset;
 }
-  
+
 .product-description .description-text {
     padding: 15px 0px;
     line-height: 20px;
@@ -436,10 +436,10 @@ main {
     display: none;
 }
 
-.cart-table-info .product-remove, 
-.cart-table-info .product-name, 
-.cart-table-info .product-price, 
-.cart-table-info .product-quantity, 
+.cart-table-info .product-remove,
+.cart-table-info .product-name,
+.cart-table-info .product-price,
+.cart-table-info .product-quantity,
 .cart-table-info .product-subtotal,
 .cart-table-info .actions {
     display: block;
@@ -485,7 +485,7 @@ main {
     margin-top: 20px;
 }
 
-.cart-calculate .cross-sells h2, 
+.cart-calculate .cross-sells h2,
 .cart-calculate .cart-totals h2,
 .checkout-form .billing-fields h2,
 .checkout-form .billing-addition h2,
@@ -498,7 +498,7 @@ main {
     font-weight: bold;
 }
 
-.cart-calculate .cross-sells h2::before, 
+.cart-calculate .cross-sells h2::before,
 .cart-calculate .cart-totals h2::before,
 .checkout-form .billing-fields h2::before,
 .checkout-form .billing-addition h2::before,
@@ -554,15 +554,23 @@ main {
     text-decoration: none;
 }
 
-.checkout-form .customer-details label {
-    display: block;
+.payment-methods li input[name="payment-method-code"] {
+    margin-right: 5px;
+}
+
+.payment-methods li {
+    display: flex;
+    align-items: center;
+}
+
+.payment-methods li label {
+    margin-bottom: 0;
 }
 
 .checkout-form .customer-details input, .checkout-form .customer-details select {
     height: 30px;
     border: 1px solid #979797;
     padding: 0 5px;
-    width: 100%;
 }
 
 .checkout-form .customer-details textarea {
@@ -1341,7 +1349,7 @@ footer {
     .cart-table-info thead, .cart-table-info thead tr, .cart-table-info .product-thumbnail {
         display: block;
     }
-    
+
     .cart-table-info thead tr th {
         float: left;
     }
@@ -1357,7 +1365,7 @@ footer {
     .cart-table-info tbody tr:nth-child(even) {
         background-color: #f5f5f5;
     }
-    
+
     .cart-table-info .product-thumbnail {
         width: 10%;
         border-bottom: 1px solid #ddd;
@@ -1491,6 +1499,7 @@ footer {
 
     .order-review {
         display: inline-block;
+        width: 100%;
     }
 
     /*  Footer  */

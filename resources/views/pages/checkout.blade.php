@@ -28,6 +28,7 @@
                     <label for="billing_state" class="">Tỉnh/Thành phố <abbr class="required" title="bắt buộc">*</abbr></label>
 
                     <select name="billing_state" id="billing_state" class="select " data-placeholder="Chọn tỉnh/thành phố" tabindex="-1" title="Tỉnh/Thành phố *">
+                        <option value="">--</option>
                         <option value="01">Hà Nội</option>
                         <option value="02">Hà Giang</option>
                         <option value="04">Cao Bằng</option>
@@ -98,7 +99,7 @@
                     <label for="billing_city" class="">Quận/Huyện <abbr class="required" title="bắt buộc">*</abbr></label>
 
                     <select name="billing_city" id="billing_city" class="select " data-allow_clear="true" data-placeholder="Chọn quận huyện" title="Quận/Huyện *" tabindex="-1">
-                        <option value=""></option>
+                        <option value="">--</option>
                         <option value="001">Quận Ba Đình</option>
                         <option value="002">Quận Hoàn Kiếm</option>
                         <option value="003">Quận Tây Hồ</option>
@@ -148,33 +149,30 @@
                     <textarea name="order_comments" class="input-text " id="order_comments" placeholder="Ghi chú về đơn hàng, ví dụ: lưu ý khi giao hàng." rows="2" cols="5"></textarea>
                 </p>
             </div>
-
-        </div>
-
-        <div id="order-review" class="order-review">
-            <h3>Đơn hàng của bạn</h3>
-            <table>
-                <thead>
+            <div id="order-review" class="order-review">
+                <h3>Đơn hàng của bạn</h3>
+                <table>
+                    <thead>
                     <tr>
                         <th class="product-name center">Sản phẩm</th>
                         <th class="product-total center">Tổng cộng</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <?php $total = 0 ?>
                     @foreach(session('cart') as $key => $value)
                         <?php $total += $value['price'] * $value['quantity'] ?>
                         <tr class="cart-item">
                             <td class="product-name">
-                                {{ $value['name'] }}&nbsp; <strong class="product-quantity">× {{ $value['quantity'] }}</strong> 
+                                {{ $value['name'] }}&nbsp; <strong class="product-quantity">× {{ $value['quantity'] }}</strong>
                             </td>
                             <td class="product-total center">
-                                <span>{{ $value['price'] * $value['quantity'] }}<span>₫</span></span> 
+                                <span>{{ $value['price'] * $value['quantity'] }}<span>₫</span></span>
                             </td>
                         </tr>
                     @endforeach
-                </tbody>
-                <tfoot>
+                    </tbody>
+                    <tfoot>
 
                     <tr class="cart-subtotal">
                         <th>Tổng phụ</th>
@@ -187,31 +185,31 @@
                     </tr>
 
 
-                </tfoot>
-            </table>
+                    </tfoot>
+                </table>
 
 
-            <div id="payment" class="checkout-payment">
-                <ul class="payment-methods methods">
-                    @foreach($paymentMethod as $type)
-                        <li class="payment-method-cod">
-                            <input id="payment-method-cod" type="radio" class="" name="{{ $type->code }}" value="{{ $type->code }}">
-
-                            <label for="payment-method-name">{{ $type->name }}</label>
-                            <div class="payment-method-desc" id="payment-method-cod-text">
+                <div id="payment" class="checkout-payment">
+                    <ul class="payment-methods methods">
+                        @foreach($paymentMethod as $type)
+                            <li>
+                                <input type="radio" class="" name="payment-method-code" value="{{ $type->code }}">
+                                <label>{{ $type->name }}</label>
+                            </li>
+                            <div class="payment-method-desc" id="payment-method-code-text">
                                 <p>{{ $type->description }}</p>
                             </div>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="form-row place-order">
-                    <noscript>
-                        Trình duyệt của bạn không hỗ trợ JavaScript, hoặc nó bị vô hiệu hóa, hãy đảm bảo bạn nhấp vào <em> Cập nhật giỏ hàng </ em> trước khi bạn thanh toán. Bạn có thể phải trả nhiều hơn số tiền đã nói ở trên, nếu bạn không làm như vậy. <br /><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Cập nhật tổng" />
-                    </noscript>
+                        @endforeach
+                    </ul>
+                    <div class="form-row place-order">
+                        <noscript>
+                            Trình duyệt của bạn không hỗ trợ JavaScript, hoặc nó bị vô hiệu hóa, hãy đảm bảo bạn nhấp vào <em> Cập nhật giỏ hàng </ em> trước khi bạn thanh toán. Bạn có thể phải trả nhiều hơn số tiền đã nói ở trên, nếu bạn không làm như vậy. <br /><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Cập nhật tổng" />
+                        </noscript>
 
-                    <input type="submit" class="add-to-cart" name="add-to-cart" id="place_order" value="Đặt hàng" data-value="Đặt hàng">
+                        <input type="submit" class="add-to-cart" name="add-to-cart" id="place_order" value="Đặt hàng" data-value="Đặt hàng">
 
-                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="46937eba2f"><input type="hidden" name="_wp_http_referer" value="/checkout?wc-ajax=update_order_review"> </div>
+                        <input type="hidden" id="_wpnonce" name="_wpnonce" value="46937eba2f"><input type="hidden" name="_wp_http_referer" value="/checkout?wc-ajax=update_order_review"> </div>
+                </div>
             </div>
         </div>
     </form>
