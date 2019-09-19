@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
 class CartController extends Controller
@@ -15,7 +16,8 @@ class CartController extends Controller
 
     public function index()
     {
-        return view('pages.cart');
+        $allCategories = Category::get();
+        return view('pages.cart', compact('allCategories'));
     }
 
     public function addToCart($id)
@@ -85,16 +87,16 @@ class CartController extends Controller
     public function removeCart(Request $request)
     {
         if($request->id) {
- 
+
             $cart = session()->get('cart');
- 
+
             if(isset($cart[$request->id])) {
- 
+
                 unset($cart[$request->id]);
- 
+
                 session()->put('cart', $cart);
             }
- 
+
             session()->flash('success', 'Product removed successfully');
         }
     }

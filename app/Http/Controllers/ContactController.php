@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 
 class ContactController extends Controller
 {
@@ -11,6 +12,7 @@ class ContactController extends Controller
     }
 
     public function index() {
-        return view('pages.contact');
+        $allCategories = Category::get();
+        return view('pages.contact', compact('allCategories'));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 
 class ProductController extends Controller
 {
@@ -11,6 +12,7 @@ class ProductController extends Controller
     }
 
     public function index() {
-        return view('pages.product');
+        $allCategories = Category::get();
+        return view('pages.product', compact('allCategories'));
     }
 }

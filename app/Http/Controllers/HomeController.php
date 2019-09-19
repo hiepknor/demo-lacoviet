@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Banner;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,7 @@ class HomeController extends Controller
 
     public function index() {
         $banner = $this->banner::get();
-        return view('pages.home', compact('banner'));
+        $allCategories = Category::get();
+        return view('pages.home', compact('banner', 'allCategories'));
     }
 }
