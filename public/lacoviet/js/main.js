@@ -119,19 +119,4 @@ $(document).ready(function () {
 
     $('.slick-prev').html('<');
     $('.slick-next').html('>');
-
-    // Checkbox to show text in checkout page
-    var paymentCodText = document.getElementById('payment-method-cod-text');
-    var paymentTransText = document.getElementById('payment-method-trans-text');
-  
-
-    $('.payment-method-trans').click(function(){
-      paymentTransText.style.display = 'block';
-      paymentCodText.style.display = 'none';
-    });
-
-    $('.payment-method-cod').click(function(){
-      paymentTransText.style.display = 'none';
-      paymentCodText.style.display = 'block';
-    });
 });

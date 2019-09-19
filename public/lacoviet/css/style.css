@@ -1478,6 +1478,21 @@ footer {
         transition: 500ms;
     }
 
+    /* Checkout page */
+    .customer-details .billing-fields {
+        width: 48%;
+        float: left;
+    }
+
+    .customer-details .billing-addition {
+        width: 48%;
+        float: right;
+    }
+
+    .order-review {
+        display: inline-block;
+    }
+
     /*  Footer  */
     .footer-block {
         display: flex;

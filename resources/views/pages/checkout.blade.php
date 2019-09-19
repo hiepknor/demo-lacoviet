@@ -161,23 +161,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="cart-item">
-                        <td class="product-name">
-                            NỤ TAM THẤT | 250gram&nbsp; <strong class="product-quantity">× 2</strong> </td>
-                        <td class="product-total center">
-                            <span>740,000<span>₫</span></span> </td>
-                    </tr>
+                    <?php $total = 0 ?>
+                    @foreach(session('cart') as $key => $value)
+                        <?php $total += $value['price'] * $value['quantity'] ?>
+                        <tr class="cart-item">
+                            <td class="product-name">
+                                {{ $value['name'] }}&nbsp; <strong class="product-quantity">× {{ $value['quantity'] }}</strong> 
+                            </td>
+                            <td class="product-total center">
+                                <span>{{ $value['price'] * $value['quantity'] }}<span>₫</span></span> 
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
 
                     <tr class="cart-subtotal">
                         <th>Tổng phụ</th>
-                        <td class="center"><span>740,000<span>₫</span></span></td>
+                        <td class="center"><span>{{ $total }}<span>₫</span></span></td>
                     </tr>
 
                     <tr class="order-total">
                         <th>Tổng cộng</th>
-                        <td class="center"><strong><span>740,000<span>₫</span></span></strong> </td>
+                        <td class="center"><strong><span>{{ $total }}<span>₫</span></span></strong> </td>
                     </tr>
 
 
@@ -187,33 +193,16 @@
 
             <div id="payment" class="checkout-payment">
                 <ul class="payment-methods methods">
-                    <li class="payment-method-cod">
-                        <input id="payment-method-cod" type="radio" class="input-radio" name="payment-method" value="cod" checked="checked">
+                    @foreach($paymentMethod as $type)
+                        <li class="payment-method-cod">
+                            <input id="payment-method-cod" type="radio" class="" name="{{ $type->code }}" value="{{ $type->code }}">
 
-                        <label for="payment-method-cod">
-                            Ship &amp; Trả tiền mặt khi nhận hàng 
-                        </label>
-                        <div class="payment-method-cod-text" id="payment-method-cod-text">
-                            <p>Cám ơn Quý khách đã đặt hàng từ HOA BAN FOOD™, chúng tôi sẽ gọi điện cho Quý khách để xác nhận đơn hàng (theo khung giờ: 8h00 – 17h00). Để được hỗ trợ thêm thông tin, kiểm tra trạng thái đơn hàng, quý khách vui lòng gọi điện tới hotline: 0914.268.535 hoặc 0961.214.914. Kính chúc Quý khách 1 ngày tốt lành!</p>
-                        </div>
-                    </li>
-                    <li class="payment-method-trans">
-                        <input id="payment-method-trans" type="radio" class="input-radio" name="payment-method" value="bacs">
-
-                        <label for="payment-method-trans">
-                            Chuyển khoản ngân hàng </label>
-                        <div class="payment-method-trans-text" id="payment-method-trans-text" style="display:none;">
-                            <p>Khi thực hiện thanh toán qua Ngân Hàng, quý anh chị vui lòng ghi rõ MÃ SỐ ĐƠN HÀNG (vui lòng xem email), hoặc số điện thoại liên lạc vào phần THÔNG TIN CHUYỂN KHOẢN để chúng tôi thuận tiện kiểm soát đơn hàng hơn. Xin chân thành cảm ơn!</p>
-                            <p>►TÀI KHOẢN<br>
-                                – Ngân hàng Vietcombank: 0011001948278 – Phạm Ngọc Tân – Chi nhánh Hà Nội<br>
-                                – Ngân hàng Agribank: 1508205263434 – Phạm Ngọc Tân – Chi nhánh Tam Trinh</p>
-                            <p>► HÀ NỘI: Giao hàng ngay trong nội thành, phí ship từ 20.000đ đến 30.000đ/đơn hàng!<br>
-                                ► CÁC TỈNH THÀNH KHÁC: Giao hàng từ 3 =&gt; 6 ngày, nhận hàng và thanh toán cho nhân viên giao hàng Viettel, Nhất Tín Express hoặc giaohangnhanh.vn…</p>
-                            <p> ● Cước ship đối với các sản phẩm Trâu, Bò, Cá Gác bếp = 70.000đ/kg (đường hàng không)<br>
-                                ● Đối với tất cả các sản phẩm còn lại: 50.000đ/đơn hàng, bất kể số lượng.<br>
-                            </p>
-                        </div>
-                    </li>
+                            <label for="payment-method-name">{{ $type->name }}</label>
+                            <div class="payment-method-desc" id="payment-method-cod-text">
+                                <p>{{ $type->description }}</p>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
                 <div class="form-row place-order">
                     <noscript>
