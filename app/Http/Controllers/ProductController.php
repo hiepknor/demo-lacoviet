@@ -8,11 +8,11 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
 class ProductController extends Controller
 {
-    public $publicParams;
+    private $publicParams;
 
-    public $category;
+    private $category;
 
-    public $product;
+    private $product;
 
     public function __construct(Category $category, Product $product) {
         $this->category = $category;
@@ -23,15 +23,18 @@ class ProductController extends Controller
     }
 
     public function index() {
+        $product = $this->product->get();
         return view('pages.product', [
-            'allCategories' => $this->publicParams['allCategories']
+            'allCategories' => $this->publicParams['allCategories'],
+            'product' => $product,
         ]);
     }
 
     public function detail($categorySlug, $productSlug) {
-
+        $product = $this->product->where('slug', $productSlug)->first();
         return view('pages.product-detail', [
-            'allCategories' => $this->publicParams['allCategories']
+            'allCategories' => $this->publicParams['allCategories'],
+            'product' => $product,
         ]);
     }
 }

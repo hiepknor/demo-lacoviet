@@ -3,34 +3,27 @@
 @section('pageTitle', 'Trang chủ')
 
 @section('content')
-    <div class="home-grid">
-{{--        @foreach($categories as $category)--}}
-{{--            <div class="original-label lastest-products-label">--}}
-{{--                <span><h3>{{ $category->name }}</h3></span>--}}
-{{--            </div>--}}
-{{--            <div class="grid-products">--}}
-{{--                @foreach($products->where('category_id', $category->id) as $product)--}}
-{{--                    {{ print_r($product->specificPrice()->getOldPrice()) }}--}}
-{{--                {{ print_r($product->categories()->value('id')) }}--}}
-{{--                    <div class="grid-item">--}}
-{{--                        <a class="item-link" href="/{{ $product->categories()->value('id') .'/'. $product->id}}" title="{{ $product->name }}"--}}
-{{--                           title="{{ $product->name }}">--}}
-{{--                            <div class="item-thumb">--}}
-{{--                                <img src="" alt="{{ $product->name }}"--}}
-{{--                                     alt="{{ $product->name }}">--}}
-{{--                                <div class="sale-sticker"><img src="images/icon_giamgia.png" alt="icon giảm giá"><span--}}
-{{--                                            class="sale-percent">11%</span></div>--}}
-{{--                            </div>--}}
-{{--                            <div class="item-name center">{{ $product->name }}</div>--}}
-{{--                            <div class="item-price">--}}
-{{--                                <span class="unit-price center">440000</span>--}}
-{{--                                <span class="promotion-price center">{{ $product->price }}</span>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                        <button class="add-to-cart center">Đặt mua ngay</button>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
-{{--        @endforeach--}}
-    </div>
+    @foreach($allCategories as $caterory)
+        <div class="original-label lastest-products-label">
+            <span><h3>{{ $caterory->name }}</h3></span>
+        </div>
+        <div class="home-grid">
+            @foreach($product->where('category_id', $caterory->id) as $item)
+                <div class="grid-item">
+                    <a class="item-link" href="" title="{{ $item->name }}">
+                        <div class="item-thumb">
+                            <img src="{{ asset('storage/uploads/public/'.$item->previewImage->disk_name) }}">
+                            <div class="sale-sticker"><img src="{{ asset('lacoviet/images/icon_giamgia.png') }}" alt="icon giảm giá"><span class="sale-percent">11%</span></div>
+                        </div>
+                        <div class="item-name center">{{ $item->name }}</div>
+                        <div class="item-price">
+                            <span class="unit-price center"></span>
+                            <span class="promotion-price center">{{ $item->price }}</span>
+                        </div>
+                    </a>
+                    <button class="add-to-cart center">Đặt mua ngay</button>
+                </div>
+            @endforeach
+        </div>
+    @endforeach
 @endsection
