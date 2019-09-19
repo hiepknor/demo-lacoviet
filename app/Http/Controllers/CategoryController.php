@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
 class CategoryController extends Controller
 {
@@ -11,8 +12,10 @@ class CategoryController extends Controller
         //
     }
 
-    public function index() {
+    public function index($categorySlug) {
         $allCategories = Category::get();
-        return view('pages.category', compact('allCategories'));
+        $categoryBySlug = Category::where('slug', $categorySlug)->first();
+        $product = Product::where('category_id', $categoryBySlug->id)->get();
+        return view('pages.category', compact('allCategories', 'categoryBySlug', 'product'));
     }
 }

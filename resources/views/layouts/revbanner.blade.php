@@ -3,7 +3,7 @@
         <div class="slides">
             <div class="slide-item">
                 <a href="#" class="slide-img">
-                    <img src="lacoviet/images/laco/banner_list.jpg" alt="">
+                    <img src="{{ asset('lacoviet/images/laco/banner_list.jpg') }}" alt="">
                 </a>
             </div>
         </div>

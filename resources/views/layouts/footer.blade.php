@@ -52,7 +52,7 @@
 				<p>© Copyright 2017&nbsp;All rights reserved. By <a href="https://www.lacoxanh.vn/"><span style="color:#FFFFFF">LACO</span></a></p>
 			</div>
 			<div class="icon-register">
-				<img alt="Bộ công thương" src="lacoviet/images/laco/dangky.png">
+				<img alt="Bộ công thương" src="{{ asset('lacoviet/images/laco/dangky.png') }}">
 			</div>
 		</div>
 	</div>

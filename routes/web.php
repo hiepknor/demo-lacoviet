@@ -29,12 +29,14 @@ Route::get('lien-he', ['as' => 'lien-he', 'uses' => 'ContactController@index']);
 
 Route::get('san-pham/{category}', ['as' => 'danh-muc', 'uses' => 'CategoryController@index']);
 
+Route::get('san-pham/{category}/{product}', ['as' => 'chi-tiet-san-pham', 'uses' => 'ProductController@detail']);
+
 Route::get('gio-hang', ['as' => 'gio-hang', 'uses' => 'CartController@index']);
 
 Route::get('them-gio-hang/{id}', ['as' => 'them-gio-hang', 'uses' => 'CartController@addToCart']);
 
 Route::patch('cap-nhat-gio-hang', ['as' => 'cap-nhat-gio-hang', 'uses' => 'CartController@updateCart']);
- 
+
 Route::delete('xoa-gio-hang', ['as' => 'xoa-gio-hang', 'uses' => 'CartController@removeCart']);
 
 Route::get('thanh-toan', ['as' => 'thanh-toan', 'uses' => 'CheckoutController@index']);
