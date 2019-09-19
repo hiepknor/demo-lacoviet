@@ -5,11 +5,10 @@
 @section('content')
     <div class="main-content-title">
         <h1>
-            <span>Sản phẩm</span>
+            <span>Tất cả sản phẩm</span>
         </h1>
     </div>
-
-    <div class="grid-products">
+    <div class="grid-products all-products">
         @foreach($product as $item)
             <div class="grid-item">
                 <a class="item-link" href="" title="{{ $item->name }}">

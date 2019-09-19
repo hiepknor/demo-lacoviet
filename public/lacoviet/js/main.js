@@ -18,7 +18,7 @@ $(document).ready(function () {
     //     }
     // });
 
-    $(".slides.owl-carousel").owlCarousel({
+    $(".home-grid.owl-carousel").owlCarousel({
         loop: false,
         rewind: true,
         margin: 10,
@@ -28,13 +28,13 @@ $(document).ready(function () {
         dots: false,
         responsive: {
             0: {
-                items: 1
+                items: 2
             },
             600: {
-                items: 1
+                items: 3
             },
             1000: {
-                items: 1
+                items: 5
             }
         },
     });
@@ -66,7 +66,7 @@ $(document).ready(function () {
     $('.pagination li [rel=next]').html('Sau');
 
     $('.pagination .disabled').hide();
-    
+
     // Product image in product view page
     var $imagesSlider = $(".slider-for > div"),
         $thumbnailsSlider = $(".slider-nav > div");

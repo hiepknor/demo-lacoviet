@@ -27,9 +27,9 @@ Route::get('tuyen-si-dai-ly', ['as' => 'tuyen-si-dai-ly', 'uses' => 'AgencyContr
 
 Route::get('lien-he', ['as' => 'lien-he', 'uses' => 'ContactController@index']);
 
-Route::get('san-pham/{category}', ['as' => 'danh-muc', 'uses' => 'CategoryController@index']);
+Route::get('san-pham/{categorySlug}', ['as' => 'danh-muc', 'uses' => 'CategoryController@index']);
 
-Route::get('san-pham/{category}/{product}', ['as' => 'chi-tiet-san-pham', 'uses' => 'ProductController@detail']);
+Route::get('san-pham/{categorySlug}/{productSlug}', ['as' => 'chi-tiet-san-pham', 'uses' => 'ProductController@detail']);
 
 Route::get('gio-hang', ['as' => 'gio-hang', 'uses' => 'CartController@index']);
 

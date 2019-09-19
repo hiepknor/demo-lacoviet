@@ -207,40 +207,12 @@ main {
 /* ================================ Breadcrumb ===========================*/
 .breadcrumb {
     margin: 30px 0;
-    position: relative;
-    height: 30px;
-    border-bottom: #86b732 1px solid;
-}
-
-.breadcrumb-link {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: inline-table;
-}
-
-.breadcrumb-link a:last-child {
-    -webkit-clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 82% 0, 90% 100%, 0 100%);
-    width: 230px;
-}
-
-.breadcrumb-link a {
-    display: inline-block;
-    line-height: 30px;
-    color: #fff;
-    padding: 0 10px;
-    position: relative;
-    z-index: 5;
-    font-size: 16px;
-    background: #86b732;
-}
-
-.breadcrumb-link a:hover, .breadcrumb-link a.active {
-    background: #404040;
 }
 
 /* ================================ Content =============================== */
+/*.main-content-title {*/
+/*    margin-bottom: 25px;*/
+/*}*/
 
 .main-content-title h1 {
     font-size: 18px;
@@ -712,14 +684,15 @@ main {
 
 .side-bar .cart-list-items .buttons {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .side-bar .cart-list-items .buttons a {
-    width: 45%;
+    width: 48%;
     color: #515151;
     background-color: #ebe9eb;
-    padding: 5px 35px;
-    margin: 8px;
+    padding: 5px 15px;
 }
 
 .side-bar .cart-list-items img {
@@ -768,6 +741,21 @@ main {
     border-bottom: 3px solid #666;
 }
 
+.grid-products {
+    margin-top: 30px;
+}
+
+.all-products .grid-item,
+.category-types .grid-item {
+    width: 50%;
+    padding: 10px;
+    float: left;
+}
+
+.home-grid {
+    margin-bottom: 30px;
+}
+
 .grid-products, .grid-four, .grid-news {
     display: inline-table;
     width: 100%;
@@ -790,8 +778,6 @@ main {
 }
 
 .grid-item .item-link .item-thumb, .grid-news .item-thumb {
-    width: 100%;
-    height: 180px;
     position: relative;
 }
 
@@ -1170,6 +1156,11 @@ footer {
 
     .home-grid .grid-products .grid-item {
         height: 385px;
+    }
+
+    .all-products .grid-item,
+    .category-types .grid-item {
+        width: calc(100% / 3);
     }
 
     .grid-products .grid-item .item-link .item-thumb {

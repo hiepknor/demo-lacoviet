@@ -27,13 +27,7 @@
         @else
             @include('layouts.revbanner')
             <div class="container">
-                <div class="breadcrumb">
-                    <div class="breadcrumb-link">
-                        <a rel="nofollow" href="/" title="Trang chủ"><i class="fa fa-home" aria-hidden="true"></i> </a>
-                        <a rel="nofollow" href="/San-pham/" class="">Sản phẩm</a>
-                        <a href="/Sua-Tam-Men-Ruou-Sake/" class="active lastnavbit">Sữa Tắm Men Rượu Sake</a>
-                    </div>
-                </div>
+                {!! Breadcrumbs::render() !!}
             </div>
         @endif
         <div class="container">

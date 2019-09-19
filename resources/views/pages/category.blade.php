@@ -8,7 +8,7 @@
             <span>{{ $categoryBySlug->name }}</span>
         </h1>
     </div>
-    <div class="grid-products">
+    <div class="grid-products category-types">
         @foreach($product as $item)
             <div class="grid-item">
                 <a class="item-link" href="{{ url('san-pham/' . $categoryBySlug->slug . '/' . $item->slug) }}" title="{{ $item->name }}">

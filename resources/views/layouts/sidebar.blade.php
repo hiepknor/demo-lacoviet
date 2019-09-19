@@ -21,8 +21,8 @@
         <p class="total"><strong>Tổng phụ:</strong> <span class="woocommerce-Price-amount amount">{{ $total }}<span class="woocommerce-Price-currencySymbol">₫</span></span></p>
 
         <p class="buttons">
-            <a href="{{url('/gio-hang')}}" class="view-cart">Xem giỏ hàng</a>
-            <a href="{{url('/thanh-toan')}}" class="view-checkout">Thanh toán</a>
+            <a href="{{ route('gio-hang') }}" class="view-cart center">Xem giỏ hàng</a>
+            <a href="{{ route('thanh-toan') }}" class="view-checkout center">Thanh toán</a>
         </p>
 
     </div>
