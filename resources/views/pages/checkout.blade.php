@@ -192,8 +192,8 @@
             <div id="payment" class="checkout-payment">
                 <ul class="payment-methods methods">
                     @foreach($paymentMethod as $type)
-                        <li class="payment-method-cod">
-                            <input id="payment-method-cod" type="radio" class="" name="{{ $type->code }}" value="{{ $type->code }}" @if($type->code == 'cod') checked @endif>
+                        <li>
+                            <input id="payment-method-code" type="radio" class="" name="payment-method-radio" value="{{ $type->code }}" @if($type->code == 'cod') checked @endif>
 
                             <label for="payment-method-name">{{ $type->name }}</label>
                             <div class="payment-method-desc" id="payment-method-cod-text">
