@@ -650,6 +650,10 @@ main {
     padding: 10px;
 }
 
+.side-bar .cart-list .empty {
+    margin: 20px 0;
+}
+
 .side-bar > .side-list-product li a{
     color: #666;
     overflow: hidden;

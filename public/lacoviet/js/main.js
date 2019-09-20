@@ -39,7 +39,7 @@ $(document).ready(function () {
         },
     });
 
-    $(".bestselling-grid.owl-carousel").owlCarousel({
+    $(".slides.owl-carousel").owlCarousel({
         loop: false,
         rewind: true,
         margin: 0,
@@ -49,13 +49,13 @@ $(document).ready(function () {
         dots: false,
         responsive: {
             0: {
-                items: 2
+                items: 1
             },
             600: {
-                items: 3
+                items: 1
             },
             1000: {
-                items: 4
+                items: 1
             }
         },
     });

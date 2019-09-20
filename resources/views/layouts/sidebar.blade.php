@@ -28,7 +28,7 @@
     </div>
     @else
     <ul class="cart-list">
-        <li class="empty">Chưa có sản phẩm trong giỏ hàng.</li>
+        <li class="empty center">Chưa có sản phẩm trong giỏ hàng.</li>
     </ul>
     @endif
 

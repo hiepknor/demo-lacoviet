@@ -19,7 +19,7 @@
                         <div class="item-name center">{{ $item->name }}</div>
                         <div class="item-price">
                             <span class="unit-price center"></span>
-                            <span class="promotion-price center">{{ round($offer->where('product_id', $item->id)->value('price'), 0) }}</span>
+                            <span class="promotion-price center">{{ round($offer->where('product_id', $item->id)->value('price'), 0) }} ₫</span>
                         </div>
                     </a>
                     <a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $item->id) }}">Đặt mua ngay</a>
