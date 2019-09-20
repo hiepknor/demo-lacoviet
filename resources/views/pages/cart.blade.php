@@ -45,7 +45,7 @@
                     </td>
 
                     <td class="product-name" data-title="Sản phẩm">
-                        <a href="https://hoabanfood.com/sp/nu-tam-that">{{ $value['name'] }}</a> 
+                        <a href="">{{ $value['name'] }}</a> 
                     </td>
 
                     <td class="product-price" data-title="Giá">
@@ -112,7 +112,7 @@
 
             <div class="proceed-to-checkout">
 
-                <a href="https://hoabanfood.com/checkout" class="proceed-checkout center add-to-cart">
+                <a href="{{ route('thanh-toan') }}" class="proceed-checkout center add-to-cart">
                     Thanh toán</a>
             </div>
         </div>
@@ -138,7 +138,7 @@
            console.log(ele.parents("tr").val());
  
             $.ajax({
-               url: '{{ url('cap-nhat-gio-hang') }}',
+               url: '{{ route("cap-nhat-gio-hang") }}',
                method: "patch",
                data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val()},
                success: function (response) {
@@ -154,7 +154,7 @@
  
             if(confirm("Bạn có muốn xóa sản phẩm này không")) {
                 $.ajax({
-                    url: '{{ url('xoa-gio-hang') }}',
+                    url: '{{ route("xoa-gio-hang") }}',
                     method: "DELETE",
                     data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
                     success: function (response) {

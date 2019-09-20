@@ -9,9 +9,13 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
 class CartController extends Controller
 {
-    public function __construct()
+    private $product;
+    public function __construct
+    (
+        Product $product
+    )
     {
-        //
+        $this->product = $product;
     }
 
     public function index()
@@ -22,9 +26,9 @@ class CartController extends Controller
 
     public function addToCart($id)
     {
-        $product = Product::find($id);
+        $product = $this->product->find($id);
 
-        if (!$product) {
+        if (!$this->product) {
 
             abort(404);
         }
@@ -36,9 +40,10 @@ class CartController extends Controller
 
             $cart = [
                 $id => [
-                    "name" => $product->name,
+                    "id" => $id,
+                    "name" => $product->value('name'),
                     "quantity" => 1,
-                    "price" => $product->price,
+                    "price" => $this->roundPrice($product->offers()->value('price')),
                     "photo" => $product->photo
                 ]
             ];
@@ -60,9 +65,10 @@ class CartController extends Controller
 
         // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
-            "name" => $product->name,
+            "id" => $id,
+            "name" => $product->value('name'),
             "quantity" => 1,
-            "price" => $product->price,
+            "price" => $this->roundPrice($product->offers()->value('price')),
             "photo" => $product->photo
         ];
 
@@ -99,5 +105,9 @@ class CartController extends Controller
 
             session()->flash('success', 'Product removed successfully');
         }
+    }
+
+    private function roundPrice($price) {
+        return round($price, 0);
     }
 }

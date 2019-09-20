@@ -2,6 +2,7 @@
 
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
 // Trang chu
 Breadcrumbs::for('trang-chu', function ($trail) {
@@ -49,6 +50,13 @@ Breadcrumbs::for('danh-muc', function ($trail, $categorySlug) {
     $trail->parent('san-pham');
     $category = Category::where('slug', $categorySlug)->first();
     $trail->push($category->name, route('danh-muc', $categorySlug));
+});
+
+// Trang chu > San pham > Ten danh muc > Ten san pham
+Breadcrumbs::for('chi-tiet-san-pham', function ($trail, $categorySlug, $productSlug) {
+    $trail->parent('danh-muc');
+    $product = Product::where('slug', $productSlug)->first();
+    $trail->push($product->name, route('chi-tiet-san-pham', [$categorySlug, $productSlug]));
 });
 
 // Trang chu > Gio hang

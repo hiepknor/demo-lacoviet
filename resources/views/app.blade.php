@@ -35,7 +35,11 @@
                 <div class="main-content">
                     @yield('content')
                 </div>
-                @include('layouts.sidebar')
+                @if (\Request::is('thanh-toan'))
+                    
+                @else
+                    @include('layouts.sidebar')
+                @endif
             </div>
             @if (\Request::is('/') || \Request::is('trang-chu'))
                 @include('layouts.homebottom')
