@@ -9,8 +9,6 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
 class ProductController extends Controller
 {
-    private $publicParams;
-
     private $category;
 
     private $product;
