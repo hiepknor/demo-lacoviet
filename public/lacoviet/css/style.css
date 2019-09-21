@@ -220,7 +220,7 @@ main {
 }
 
 .main-content-title span {
-    color: #236899;
+    color: #86b732;
     font-weight: bold;
 }
 
@@ -626,7 +626,7 @@ main {
     align-items: center;
     height: 45px;
     color: #fff;
-    background-color: #236899;
+    background-color: #86b732;
     padding: 0 20px;
 }
 
@@ -643,7 +643,7 @@ main {
 }
 
 .side-bar .side-title a {
-    background: #236899;
+    background: #86b732;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -843,7 +843,7 @@ main {
 
 .add-to-cart {
     margin: auto;
-    background: #c10960;
+    background: #86b732;
     border: none;
     padding: 10px;
     margin-top: 5px;
@@ -1063,9 +1063,9 @@ footer {
 
 .subscribe-submit {
     padding: 10px 35px;
-    background: url(../images/mail.png) no-repeat 30px 13px #236899;
+    background: url(../images/mail.png) no-repeat 16px 15px #84b332;
     border: none;
-    color: #ffffff;
+    color: #3e3e3e;
     margin: 15px;
     text-transform: uppercase;
     padding-left: 55px;
@@ -1098,7 +1098,7 @@ footer {
 
 .icon-phone a {
     display: inline-block;
-    background: #236899;
+    background: #86b732;
     color: #fff;
     padding: 6px 15px;
     border-radius: 5px;
