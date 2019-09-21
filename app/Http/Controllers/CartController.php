@@ -32,7 +32,7 @@ class CartController extends Controller
 
     public function addToCart($id)
     {
-        $product = $this->product->find($id);
+        $product = Product::find($id);
 
         if (!$this->product) {
 
@@ -47,7 +47,7 @@ class CartController extends Controller
             $cart = [
                 $id => [
                     "id" => $id,
-                    "name" => $product->value('name'),
+                    "name" => $product->name,
                     "quantity" => 1,
                     "price" => $this->roundPrice($product->offers()->value('price')),
                     "photo" => $product->photo
@@ -72,7 +72,7 @@ class CartController extends Controller
         // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
             "id" => $id,
-            "name" => $product->value('name'),
+            "name" => $product->name,
             "quantity" => 1,
             "price" => $this->roundPrice($product->offers()->value('price')),
             "photo" => $product->photo

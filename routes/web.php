@@ -42,3 +42,5 @@ Route::delete('xoa-gio-hang', ['as' => 'xoa-gio-hang', 'uses' => 'CartController
 Route::get('thanh-toan', ['as' => 'thanh-toan', 'uses' => 'CheckoutController@index']);
 
 Route::post('luu-don-hang', ['as' => 'luu-don-hang', 'uses' => 'CheckoutController@saveOrder']);
+
+Route::get('saveOrder', ['as' => 'dat-hang-thanh-cong', 'uses' => 'CheckoutController@saveOrder']);

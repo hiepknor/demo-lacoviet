@@ -18,17 +18,17 @@
                 <h2>Thông tin thanh toán</h2>
 
                 <p class="validate-required" id="billing_last_name_field">
-                    <label for="billing_last_name" >Họ và tên <abbr class="required" title="bắt buộc">*</abbr></label><input type="text" class="input-text " name="name[]" id="name" placeholder="Nhập đầy đủ họ và tên" value="">
+                    <label for="billing_last_name" >Họ và tên <abbr class="required" title="bắt buộc">*</abbr></label><input type="text" class="input-text " name="name" id="name" placeholder="Nhập đầy đủ họ và tên" value="">
                 </p>
 
                 <p class=" validate-required validate-phone" id="billing_phone_field">
-                    <label for="billing_phone" >Số điện thoại <abbr class="required" title="bắt buộc">*</abbr></label><input type="tel" class="input-text " name="phone[]" id="phone" placeholder="" autocomplete="tel" value="">
+                    <label for="billing_phone" >Số điện thoại <abbr class="required" title="bắt buộc">*</abbr></label><input type="tel" class="input-text " name="phone" id="phone" placeholder="" autocomplete="tel" value="">
                 </p>
 
                 <p class="validate-required" id="billing_city_field" >
                     <label for="billing_city" >Tỉnh/Thành phố <abbr class="required" title="bắt buộc">*</abbr></label>
 
-                    <select name="city[]" id="city[]" class="input-text" data-placeholder="Chọn tỉnh/thành phố" tabindex="-1" title="Tỉnh/Thành phố *">
+                    <select name="city" id="city" class="input-text" data-placeholder="Chọn tỉnh/thành phố" tabindex="-1" title="Tỉnh/Thành phố *">
                         <option value="">--</option>
                         <option value="Hà Nội">Hà Nội</option>
                         <option value="Hà Giang">Hà Giang</option>
@@ -97,14 +97,20 @@
                 </p>
 
                 <p class="validate-required" id="billing_city_field">
+                    <label for="billing_city" class="">Quận/Huyện<abbr class="required" title="bắt buộc">*</abbr></label>
+
+                    <input type="text" class="input-text" name="district" id="street" placeholder="" autocomplete="tel" value="">
+                </p>
+
+                <p class="validate-required" id="billing_city_field">
                     <label for="billing_city" class="">Xã/Phường/thị trấn <abbr class="required" title="bắt buộc">*</abbr></label>
 
-                    <input type="text" class="input-text" name="street[]" id="street" placeholder="" autocomplete="tel" value="">
+                    <input type="text" class="input-text" name="ward" id="street" placeholder="" autocomplete="tel" value="">
                 </p>
 
                 <p class="validate-required" id="billing_address_2_field">
                     <label for="billing_address_2" class="">Địa chỉ <abbr class="required" title="bắt buộc">*</abbr></label>
-                    <input type="text" class="input-text " name="address[]" id="billing_last_name" placeholder="Ví dụ: Số nhà 20 ngõ 35, ..." value="">
+                    <input type="text" class="input-text " name="street" id="billing_last_name" placeholder="VD: 20 Cầu Giấy, ..." value="">
                 </p>
 
             </div>
@@ -113,70 +119,76 @@
                 <h2>Thông tin thêm</h2>
                 <p class="notes" id="order_comments_field">
                     <label for="order_comments" class="">Ghi chú đơn hàng</label>
-                    <textarea name="property[]" class="input-text " id="order_comments" placeholder="Ghi chú về đơn hàng, ví dụ: lưu ý khi giao hàng." rows="2" cols="5"></textarea>
+                    <textarea name="property" class="input-text " id="order_comments" placeholder="Ghi chú về đơn hàng, ví dụ: lưu ý khi giao hàng." rows="2" cols="5"></textarea>
                 </p>
             </div>
-            <div id="order-review" class="order-review">
-                <h3>Đơn hàng của bạn</h3>
-                <table>
-                    <thead>
-                    <tr>
-                        <th class="product-name">Sản phẩm</th>
-                        <th class="product-total center">Tổng cộng</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $total = 0 ?>
-                    @foreach(session('cart') as $key => $value)
-                        <?php $total += $value['price'] * $value['quantity'] ?>
-                        <tr class="cart-item">
-                            <td class="product-name">
-                                {{ $value['name'] }}&nbsp; <strong class="product-quantity">× {{ $value['quantity'] }}</strong> 
-                            </td>
-                            <td class="product-total center">
-                                <span>{{ $value['price'] * $value['quantity'] }}<span>₫</span></span> 
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-                <tfoot>
-                    <tr class="cart-subtotal">
-                        <th>Tổng phụ</th>
-                        <td class="center"><span>{{ $total }}<span>₫</span></span></td>
-                    </tr>
 
-                    <tr class="order-total">
-                        <th>Tổng cộng</th>
-                        <td class="center"><strong><span>{{ $total }}<span>₫</span></span></strong> </td>
-                        <td><input type="hidden" name="total_price[]"></td>
-                    </tr>
-                </tfoot>
-            </table>
-
-
+            <h3>Phương thức thanh toán</h3>
             <div id="payment" class="checkout-payment">
                 <ul class="payment-methods methods">
-                    @foreach($paymentMethod as $type)
+                    @foreach($paymentMethod as $method)
                         <li>
-                            <input id="payment-method-code" type="radio" class="" name="payment_method[]" value="{{ $type->code }}" @if($type->code == 'cod') checked @endif>
+                            <input id="payment-method-code" type="radio" class="" name="payment_method" value="{{ $method->id }}" @if($method->code == 'cod') checked @endif>
 
-                            <label for="payment-method-name">{{ $type->name }}</label>
+                            <label for="payment-method-name">{{ $method->name }}</label>
                             <div class="payment-method-desc" id="payment-method-cod-text">
-                                <p>{{ $type->description }}</p>
+                                <p>{{ $method->description }}</p>
                             </div>
                         </li>
                     @endforeach
                 </ul>
-                <div class="form-row place-order">
-                    <noscript>
-                        Trình duyệt của bạn không hỗ trợ JavaScript, hoặc nó bị vô hiệu hóa, hãy đảm bảo bạn nhấp vào <em> Cập nhật giỏ hàng </ em> trước khi bạn thanh toán. Bạn có thể phải trả nhiều hơn số tiền đã nói ở trên, nếu bạn không làm như vậy. <br /><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="Cập nhật tổng" />
-                    </noscript>
+            </div>
 
+            @if(session('cart'))
+            <div id="order-review" class="order-review">
+                <h3>Đơn hàng của bạn</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="product-name">Sản phẩm</th>
+                            <th class="product-total center">Tổng cộng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $total = 0 ?>
+                            @foreach(session('cart') as $key => $value)
+                                <?php $total += $value['price'] * $value['quantity'] ?>
+                                <tr class="cart-item">
+                                    <td class="product-name">
+                                        {{ $value['name'] }}&nbsp; <strong class="product-quantity">× {{ $value['quantity'] }}</strong>
+                                    </td>
+                                    <td class="product-total center">
+                                        <span>{{ formatPrice($value['price'] * $value['quantity']) }}&nbsp;₫</span>
+                                    </td>
+                                </tr>
+                            @endforeach
+                    </tbody>
+                    <tfoot>
+                        <tr class="cart-subtotal">
+                            <th>Tổng phụ</th>
+                            <td class="center"><span>{{ formatPrice($total) }}<span>&nbsp;₫</span></span></td>
+                        </tr>
+
+                        <tr class="cart-subtotal">
+                            <th>VAT (10%)</th>
+                            <td class="center"><span>{{ formatPrice($total * 10 / 100) }}<span>&nbsp;₫</span></span></td>
+                        </tr>
+
+                        <tr class="order-total">
+                            <th>Tổng cộng</th>
+                            <td class="center"><strong><span>{{ formatPrice($total + ($total * 10 / 100)) }}<span>&nbsp;₫</span></span></strong> </td>
+                            <td><input type="hidden" name="total_price" value="{{ $total + ($total * 10 / 100) }}"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="form-row place-order">
                     <input type="submit" class="add-to-cart" name="add-to-cart" id="place_order" value="Đặt hàng" data-value="Đặt hàng">
                 </div>
-            </div>
+            @else
+                <p class="center">Giỏ hàng hiện đang trống </p>
+            @endif
         </div>
     </form>
 </div>
-
 @endsection

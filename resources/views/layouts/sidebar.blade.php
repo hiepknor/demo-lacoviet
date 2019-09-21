@@ -44,3 +44,27 @@
 {{-- @endforeach--}}
 </ul>
 </div>
+
+@section('scripts')
+    <script type="text/javascript">
+
+        jQuery(".remove-cart").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            if(confirm("Bạn có muốn xóa sản phẩm này không")) {
+                $.ajax({
+                    url: '{{ route("xoa-gio-hang") }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+
+    </script>
+
+@endsection
