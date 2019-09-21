@@ -860,6 +860,11 @@ main {
     cursor: pointer;
 }
 
+.add-to-cart span i {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
 /* ================================ Banner =============================== */
 .banner {
     position: relative;
