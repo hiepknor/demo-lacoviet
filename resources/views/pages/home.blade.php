@@ -22,9 +22,9 @@
                             @if($offer->where('product_id', $item->id)->value('old_price') == 0)
                                 <span class="unit-price center"></span>
                             @else
-                                <span class="unit-price center">{{ round($offer->where('product_id', $item->id)->value('old_price'), 0) }} ₫</span>
+                                <span class="unit-price center">{{ formatPrice($offer->where('product_id', $item->id)->value('old_price')) }} ₫</span>
                             @endif
-                            <span class="promotion-price center">{{ round($offer->where('product_id', $item->id)->value('price'), 0) }} ₫</span>
+                            <span class="promotion-price center">{{ formatPrice($offer->where('product_id', $item->id)->value('price')) }} ₫</span>
                         </div>
                     </a>
                     <a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $item->id) }}">

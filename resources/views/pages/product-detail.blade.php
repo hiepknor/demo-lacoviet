@@ -71,9 +71,9 @@
 		</div>
 
 		<div>
-			<a href="#test-popup" class="open-popup-link button-buy" title="Mua ngay">
-				<span><i class="fa fa-cart-plus" aria-hidden="true"></i> Mua ngay</span>
-			</a>
+			<a class="add-to-cart center" href="">
+                <span><i class="fa fa-cart-plus" aria-hidden="true"></i>Đặt mua ngay</span>
+            </a>
 		</div>
 
 		<div class="addition-info">
