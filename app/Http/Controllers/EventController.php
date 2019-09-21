@@ -7,12 +7,15 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 
 class EventController extends Controller
 {
-    public function __construct() {
-        //
+    private $category;
+
+    public function __construct(Category $category) {
+        $this->category = $category;
     }
 
     public function index() {
-        $allCategories = Category::get();
-        return view('pages.event', compact('allCategories'));
+        return view('pages.event', [
+            'all_categories' => $this->category->get(),
+        ]);
     }
 }

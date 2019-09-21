@@ -3,8 +3,7 @@
 @section('pageTitle', 'Trang chủ')
 
 @section('content')
-{{--    {{ Breadcrumbs::render('pages.home', $home) }}--}}
-    @foreach($allCategories as $caterory)
+    @foreach($all_categories as $caterory)
         <div class="original-label lastest-products-label">
             <span><h3>{{ $caterory->name }}</h3></span>
         </div>
@@ -14,11 +13,17 @@
                     <a class="item-link" href="" title="{{ $item->name }}">
                         <div class="item-thumb">
                             <img src="{{ asset('storage/uploads/public/'.$item->previewImage->disk_name) }}">
-                            <div class="sale-sticker"><img src="{{ asset('lacoviet/images/icon_giamgia.png') }}" alt="icon giảm giá"><span class="sale-percent">11%</span></div>
+                            @if($offer->where('product_id', $item->id)->value('old_price') != 0)
+                                <div class="sale-sticker"><img src="{{ asset('lacoviet/images/icon_giamgia.png') }}" alt="icon giảm giá"><span class="sale-percent">{{ round(($offer->where('product_id', $item->id)->value('old_price') - $offer->where('product_id', $item->id)->value('price')) / $offer->where('product_id', $item->id)->value('old_price') * 100, 0) }} %</span></div>
+                            @endif
                         </div>
                         <div class="item-name center">{{ $item->name }}</div>
                         <div class="item-price">
-                            <span class="unit-price center"></span>
+                            @if($offer->where('product_id', $item->id)->value('old_price') == 0)
+                                <span class="unit-price center"></span>
+                            @else
+                                <span class="unit-price center">{{ round($offer->where('product_id', $item->id)->value('old_price'), 0) }} ₫</span>
+                            @endif
                             <span class="promotion-price center">{{ round($offer->where('product_id', $item->id)->value('price'), 0) }} ₫</span>
                         </div>
                     </a>

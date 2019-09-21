@@ -10,18 +10,24 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 class CartController extends Controller
 {
     private $product;
+    private $category;
+
     public function __construct
     (
-        Product $product
+        Product $product,
+        Category $category
     )
     {
         $this->product = $product;
+        $this->category = $category;
     }
 
     public function index()
     {
-        $allCategories = Category::get();
-        return view('pages.cart', compact('allCategories'));
+
+        return view('pages.cart', [
+            'all_categories' => $this->category->get(),
+        ]);
     }
 
     public function addToCart($id)

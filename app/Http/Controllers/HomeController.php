@@ -32,15 +32,11 @@ class HomeController extends Controller
     }
 
     public function index() {
-        $banner = $this->banner::get();
-        $allCategories = Category::get();
-        $product = $this->product->get();
-        $offer = $this->offer;
         return view('pages.home', [
-            'banner' => $banner,
-            'allCategories' => $allCategories,
-            'product' => $product,
-            'offer' => $offer
+            'banner' => $this->banner::get(),
+            'all_categories' => $this->category->get(),
+            'product' => $this->product->get(),
+            'offer' => $this->offer,
         ]);
     }
 }

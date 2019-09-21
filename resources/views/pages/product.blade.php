@@ -18,8 +18,12 @@
                     </div>
                     <div class="item-name center">{{ $item->name }}</div>
                     <div class="item-price">
-                        <span class="unit-price center"></span>
-                        <span class="promotion-price center">{{ $item->price }}</span>
+                        @if($offer->where('product_id', $item->id)->value('old_price') == 0)
+                            <span class="unit-price center"></span>
+                        @else
+                            <span class="unit-price center">{{ round($offer->where('product_id', $item->id)->value('old_price'), 0) }} ₫</span>
+                        @endif
+                        <span class="promotion-price center">{{ round($offer->where('product_id', $item->id)->value('price'), 0) }} ₫</span>
                     </div>
                 </a>
                 <button class="add-to-cart center">Đặt mua ngay</button>

@@ -8,15 +8,24 @@ use Mckenziearts\Shopper\Plugins\Orders\Models\PaymentMethod;
 
 class CheckoutController extends Controller
 {
+    private $category;
+
     private $paymentMethod;
 
-    public function __construct(PaymentMethod $paymentMethod) {
+    public function __construct
+    (
+        PaymentMethod $paymentMethod,
+        Category $category
+    )
+    {
+        $this->category = $category;
         $this->paymentMethod = $paymentMethod;
     }
 
     public function index() {
-        $allCategories = Category::get();
-        $paymentMethod = $this->paymentMethod->get();
-        return view('pages.checkout', compact('allCategories', 'paymentMethod'));
+        return view('pages.checkout', [
+            'all_categories' => $this->category->get(),
+            'paymentMethod' => $this->paymentMethod->get(),
+        ]);
     }
 }

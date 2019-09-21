@@ -7,12 +7,15 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 
 class ContactController extends Controller
 {
-    public function __construct() {
-        //
+    private $category;
+
+    public function __construct(Category $category) {
+        $this->category = $category;
     }
 
     public function index() {
-        $allCategories = Category::get();
-        return view('pages.contact', compact('allCategories'));
+        return view('pages.contact', [
+            'all_categories' => $this->category->get(),
+        ]);
     }
 }

@@ -7,12 +7,15 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 
 class AboutController extends Controller
 {
-    public function __construct() {
-        //
+    private $category;
+
+    public function __construct(Category $category) {
+        $this->category = $category;
     }
 
     public function index() {
-        $allCategories = Category::get();
-        return view('pages.about', compact('allCategories'));
+        return view('pages.about', [
+            'all_categories' => $this->category->get(),
+        ]);
     }
 }

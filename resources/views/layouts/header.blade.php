@@ -16,7 +16,7 @@
                         <span class="nav-click"><i class="nav-arrow"></i></span>
                         <div class="label label-parent"><a href="{{ route('san-pham') }}">Sản phẩm</a></div>
                         <ul class="nav-submenu second-level-menu">
-                            @foreach($allCategories as $catg)
+                            @foreach($all_categories as $catg)
                                 <li class="nav-submenu-item ">
                                     <div class="label">
                                         <i class="fa fa-check" aria-hidden="true"></i>

@@ -835,7 +835,7 @@ main {
 }
 
 .promotion-price {
-    font-size: 18px;
+    font-size: 16px;
     color: #86b732;
     font-weight: bold;
     height: 21px;
@@ -851,6 +851,7 @@ main {
     font-weight: bold;
     color: #ffffff;
     font-size: 12px;
+    cursor: pointer;
 }
 
 /* ================================ Banner =============================== */
@@ -1194,6 +1195,7 @@ footer {
 
     .add-to-cart:hover {
         background-color: #666;
+        color: #fff;
     }
 
     .resouce .activity, .resouce .video {
@@ -1502,7 +1504,7 @@ footer {
     }
 
     /* Checkout page */
-    
+
 
     /*  Footer  */
     .footer-block {
