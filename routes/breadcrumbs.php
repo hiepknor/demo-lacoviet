@@ -47,14 +47,14 @@ Breadcrumbs::for('lien-he', function ($trail) {
 
 // Trang chu > San pham > Ten danh muc
 Breadcrumbs::for('danh-muc', function ($trail, $categorySlug) {
-    $trail->parent('san-pham');
+    $trail->parent('trang-chu');
     $category = Category::where('slug', $categorySlug)->first();
     $trail->push($category->name, route('danh-muc', $categorySlug));
 });
 
 // Trang chu > San pham > Ten danh muc > Ten san pham
 Breadcrumbs::for('chi-tiet-san-pham', function ($trail, $categorySlug, $productSlug) {
-    $trail->parent('danh-muc');
+    $trail->parent('san-pham');
     $product = Product::where('slug', $productSlug)->first();
     $trail->push($product->name, route('chi-tiet-san-pham', [$categorySlug, $productSlug]));
 });

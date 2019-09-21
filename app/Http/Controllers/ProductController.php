@@ -36,7 +36,7 @@ class ProductController extends Controller
     }
 
     public function detail($categorySlug, $productSlug) {
-        $product = $this->product->where('slug', $productSlug)->first();
+        $product = $this->product->whereSlug($productSlug)->first();
         return view('pages.product-detail', [
             'all_categories' => $this->category->get(),
             'product' => $product,

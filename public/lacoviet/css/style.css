@@ -1,3 +1,9 @@
+:root {
+    --theme-color: #236899;
+    --button-color: #c10960;
+    --white-color: #ffffff;
+  }
+
 @font-face {
     font-family: RobotoR;
     src: url(../fonts/RobotoCondensed-Regular.ttf);
@@ -90,7 +96,7 @@ header {
 }
 
 .header-nav * {
-    color: #fff;
+    color: var(--white-color);
 }
 
 .header-nav a {
@@ -98,7 +104,7 @@ header {
 }
 
 .header-nav a:hover, .header-nav a:active {
-    color: #fff;
+    color: var(--white-color);
 }
 
 .header-nav .nav-list {
@@ -311,7 +317,7 @@ main {
     transition: all .2s;
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
-    color: #fff;
+    color: var(--white-color);
     border-radius: 4px;
     width: 40px;
     height: 40px;
@@ -349,7 +355,7 @@ main {
     display: inline-block;
     background: #86b732;
     padding: 10px 0px 10px;
-    color: #FFF;
+    color: var(--white-color);
     text-align: center;
     margin-bottom: 5px;
     width: 100%;
@@ -610,14 +616,14 @@ main {
     padding: 7px 20px;
     background: #86b732;
     border: none;
-    color: #FFF;
+    color: var(--white-color);
     cursor: pointer;
     border-radius: 3px;
 }
 
 .original-label {
     width: 100%;
-    border-bottom: 1px solid #86b732;
+    border-bottom: 1px solid var(--theme-color);
     margin-bottom: 30px;
 }
 
@@ -625,8 +631,8 @@ main {
     display: inline-flex;
     align-items: center;
     height: 45px;
-    color: #fff;
-    background-color: #86b732;
+    color: var(--white-color);
+    background-color: var(--theme-color);
     padding: 0 20px;
 }
 
@@ -643,8 +649,8 @@ main {
 }
 
 .side-bar .side-title a {
-    background: #86b732;
-    color: #fff;
+    background: var(--theme-color);
+    color: var(--white-color);
     text-align: center;
     text-transform: uppercase;
     border-bottom: none;
@@ -797,7 +803,7 @@ main {
 
 .item-thumb .sale-sticker .sale-percent {
     position: absolute;
-    color: #fff;
+    color: var(--white-color);
     font-size: 12px;
     font-weight: bold;
     top: 5px;
@@ -843,7 +849,7 @@ main {
 
 .add-to-cart {
     margin: auto;
-    background: #86b732;
+    background: var(--button-color);
     border: none;
     padding: 10px;
     margin-top: 5px;
@@ -869,7 +875,7 @@ main {
     height: 100%;
     position: absolute;
     top: 0;
-    color: #fff;
+    color: var(--white-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -893,10 +899,10 @@ main {
 
 .banner-more {
     font-weight: bold;
-    border: 1px solid #fff;
+    border: 1px solid var(--white-color);
     border-radius: 3px;
     padding: 10px 20px;
-    color: #fff;
+    color: var(--white-color);
 }
 
 .banner-more:hover {
@@ -919,7 +925,7 @@ main {
     height: 100%;
     position: absolute;
     top: 0;
-    color: #fff;
+    color: var(--white-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -934,10 +940,10 @@ main {
 .banner-more {
     margin-top: 10px;
     font-weight: bold;
-    border: 1px solid #fff;
+    border: 1px solid var(--white-color);
     border-radius: 3px;
     padding: 10px 20px;
-    color: #fff;
+    color: var(--white-color);
 }
 
 .banner-more:hover {
@@ -1025,7 +1031,7 @@ main {
 /* ================================ Footer =============================== */
 footer {
     background: #333;
-    color: #fff;
+    color: var(--white-color);
     padding-top: 30px;
 }
 
@@ -1044,7 +1050,7 @@ footer {
 }
 
 .footer-block-item a {
-    color: #fff;
+    color: var(--white-color);
     line-height: 36px;
 }
 
@@ -1058,9 +1064,9 @@ footer {
 
 .subscribe-submit {
     padding: 10px 35px;
-    background: url(../images/mail.png) no-repeat 16px 15px #84b332;
+    background: url(../images/mail.png) no-repeat 30px 13px var(--theme-color);
     border: none;
-    color: #3e3e3e;
+    color: #ffffff;
     margin: 15px;
     text-transform: uppercase;
     padding-left: 55px;
@@ -1093,8 +1099,8 @@ footer {
 
 .icon-phone a {
     display: inline-block;
-    background: #86b732;
-    color: #fff;
+    background: var(--theme-color);
+    color: #ffffff;
     padding: 6px 15px;
     border-radius: 5px;
 }
@@ -1195,7 +1201,7 @@ footer {
 
     .add-to-cart:hover {
         background-color: #666;
-        color: #fff;
+        color: var(--white-color);
     }
 
     .resouce .activity, .resouce .video {
@@ -1297,7 +1303,7 @@ footer {
     }
 
     .header-nav .nav-submenu .nav-submenu-item a, .header-nav .nav-submenu li > .label i{
-        color: #fff;
+        color: var(--white-color);
     }
 
     .header-nav .nav-submenu li {
@@ -1448,7 +1454,7 @@ footer {
     }
 
     .proceed-checkout {
-        color: #fff;
+        color: var(--white-color);
         background-color: #86b732;
         display: block;
         padding: 10px;
@@ -1478,7 +1484,7 @@ footer {
         transition: 500ms;
     }
 
-    .grid-products .grid-item:hover .item-thumb > img, .grid-item:hover img, .activity a:hover + img, .video a:hover + img{
+    .grid-products .grid-item:hover .item-thumb > img, .grid-item:hover .item-thumb > img, .activity a:hover + img, .video a:hover + img{
         -ms-transform: scale(1.1); /* IE 9 */
         -webkit-transform: scale(1.1); /* Safari 3-8 */
         transform: scale(1.1);

@@ -71,8 +71,8 @@
 		</div>
 
 		<div>
-			<a href="#test-popup" class="open-popup-link button-buy" title="Mua ngay">
-				<span><i class="fa fa-cart-plus" aria-hidden="true"></i> Mua ngay</span>
+			<a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $product->id) }}">
+				<span><i class="fa fa-cart-plus" aria-hidden="true"></i>Đặt mua ngay</span>
 			</a>
 		</div>
 
@@ -87,11 +87,13 @@
 </div>
 <div class="product-description">
 	<div class="original-label description-label">
-		<span><h3>Thông tin sản phẩm</h3></span>
+		<span>
+			<h3>Thông tin sản phẩm</h3>
+		</span>
 	</div>
 
 	<div class="description-text">
-        {{ $product->description }}
+		{{ $product->description }}
 	</div>
 
 	<div class="like-share" style="margin:15px 0px;text-align: right;">
@@ -105,7 +107,9 @@
 	</div>
 
 	<div class="original-label related-product-label">
-		<span><h3>Sản phẩm liên quan</h3></span>
+		<span>
+			<h3>Sản phẩm liên quan</h3>
+		</span>
 	</div>
 </div>
 @endsection
