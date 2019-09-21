@@ -10,135 +10,102 @@
 </div>
 
 <div class="main-content-text">
-    <form name="checkout-form" method="post" class="checkout checkout-form" action="https://hoabanfood.com/checkout" enctype="multipart/form-data">
+    <form name="checkout-form" method="post" class="checkout checkout-form" action="{{ url('luu-don-hang') }}" enctype="multipart/form-data">
+        {{ csrf_field() }}
         <div class="customer-details" id="customer-details">
             <div class="billing-fields">
 
                 <h2>Thông tin thanh toán</h2>
 
                 <p class="validate-required" id="billing_last_name_field">
-                    <label for="billing_last_name" class="">Họ và tên <abbr class="required" title="bắt buộc">*</abbr></label><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Nhập đầy đủ họ và tên" value="">
+                    <label for="billing_last_name" >Họ và tên <abbr class="required" title="bắt buộc">*</abbr></label><input type="text" class="input-text " name="name[]" id="name" placeholder="Nhập đầy đủ họ và tên" value="">
                 </p>
 
                 <p class=" validate-required validate-phone" id="billing_phone_field">
-                    <label for="billing_phone" class="">Số điện thoại <abbr class="required" title="bắt buộc">*</abbr></label><input type="tel" class="input-text " name="billing_phone" id="billing_phone" placeholder="" autocomplete="tel" value="">
+                    <label for="billing_phone" >Số điện thoại <abbr class="required" title="bắt buộc">*</abbr></label><input type="tel" class="input-text " name="phone[]" id="phone" placeholder="" autocomplete="tel" value="">
                 </p>
 
-                <p class="validate-required" id="billing_state_field">
-                    <label for="billing_state" class="">Tỉnh/Thành phố <abbr class="required" title="bắt buộc">*</abbr></label>
+                <p class="validate-required" id="billing_city_field" >
+                    <label for="billing_city" >Tỉnh/Thành phố <abbr class="required" title="bắt buộc">*</abbr></label>
 
-                    <select name="billing_state" id="billing_state" class="select " data-placeholder="Chọn tỉnh/thành phố" tabindex="-1" title="Tỉnh/Thành phố *">
+                    <select name="city[]" id="city[]" class="input-text" data-placeholder="Chọn tỉnh/thành phố" tabindex="-1" title="Tỉnh/Thành phố *">
                         <option value="">--</option>
-                        <option value="01">Hà Nội</option>
-                        <option value="02">Hà Giang</option>
-                        <option value="04">Cao Bằng</option>
-                        <option value="06">Bắc Kạn</option>
-                        <option value="08">Tuyên Quang</option>
-                        <option value="10">Lào Cai</option>
-                        <option value="11">Điện Biên</option>
-                        <option value="12">Lai Châu</option>
-                        <option value="14">Sơn La</option>
-                        <option value="15">Yên Bái</option>
-                        <option value="17">Hoà Bình</option>
-                        <option value="19">Thái Nguyên</option>
-                        <option value="20">Lạng Sơn</option>
-                        <option value="22">Quảng Ninh</option>
-                        <option value="24">Bắc Giang</option>
-                        <option value="25">Phú Thọ</option>
-                        <option value="26">Vĩnh Phúc</option>
-                        <option value="27">Bắc Ninh</option>
-                        <option value="30">Hải Dương</option>
-                        <option value="31">Hải Phòng</option>
-                        <option value="33">Hưng Yên</option>
-                        <option value="34">Thái Bình</option>
-                        <option value="35">Hà Nam</option>
-                        <option value="36">Nam Định</option>
-                        <option value="37">Ninh Bình</option>
-                        <option value="38">Thanh Hóa</option>
-                        <option value="40">Nghệ An</option>
-                        <option value="42">Hà Tĩnh</option>
-                        <option value="44">Quảng Bình</option>
-                        <option value="45">Quảng Trị</option>
-                        <option value="46">Thừa Thiên Huế</option>
-                        <option value="48">Đà Nẵng</option>
-                        <option value="49">Quảng Nam</option>
-                        <option value="51">Quảng Ngãi</option>
-                        <option value="52">Bình Định</option>
-                        <option value="54">Phú Yên</option>
-                        <option value="56">Khánh Hòa</option>
-                        <option value="58">Ninh Thuận</option>
-                        <option value="60">Bình Thuận</option>
-                        <option value="62">Kon Tum</option>
-                        <option value="64">Gia Lai</option>
-                        <option value="66">Đắk Lắk</option>
-                        <option value="67">Đắk Nông</option>
-                        <option value="68">Lâm Đồng</option>
-                        <option value="70">Bình Phước</option>
-                        <option value="72">Tây Ninh</option>
-                        <option value="74">Bình Dương</option>
-                        <option value="75">Đồng Nai</option>
-                        <option value="77">Bà Rịa - Vũng Tàu</option>
-                        <option value="79">Hồ Chí Minh</option>
-                        <option value="80">Long An</option>
-                        <option value="82">Tiền Giang</option>
-                        <option value="83">Bến Tre</option>
-                        <option value="84">Trà Vinh</option>
-                        <option value="86">Vĩnh Long</option>
-                        <option value="87">Đồng Tháp</option>
-                        <option value="89">An Giang</option>
-                        <option value="91">Kiên Giang</option>
-                        <option value="92">Cần Thơ</option>
-                        <option value="93">Hậu Giang</option>
-                        <option value="94">Sóc Trăng</option>
-                        <option value="95">Bạc Liêu</option>
-                        <option value="96">Cà Mau</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Hà Giang">Hà Giang</option>
+                        <option value="Cao Bằng">Cao Bằng</option>
+                        <option value="Bắc Kạn">Bắc Kạn</option>
+                        <option value="Tuyên Quang">Tuyên Quang</option>
+                        <option value="Lào Cai">Lào Cai</option>
+                        <option value="Điện Biên">Điện Biên</option>
+                        <option value="Lai Châu">Lai Châu</option>
+                        <option value="Sơn La">Sơn La</option>
+                        <option value="Yên Bái">Yên Bái</option>
+                        <option value="Hoà Bình">Hoà Bình</option>
+                        <option value="Thái Nguyên">Thái Nguyên</option>
+                        <option value="Lạng Sơn">Lạng Sơn</option>
+                        <option value="Quảng Ninh">Quảng Ninh</option>
+                        <option value="Bắc Giang">Bắc Giang</option>
+                        <option value="Phú Thọ">Phú Thọ</option>
+                        <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                        <option value="Bắc Ninh">Bắc Ninh</option>
+                        <option value="Hải Dương">Hải Dương</option>
+                        <option value="Hải Phòng">Hải Phòng</option>
+                        <option value="Hưng Yên">Hưng Yên</option>
+                        <option value="Thái Bình">Thái Bình</option>
+                        <option value="Hà Nam">Hà Nam</option>
+                        <option value="Nam Định">Nam Định</option>
+                        <option value="Ninh Bình">Ninh Bình</option>
+                        <option value="Thanh Hóa">Thanh Hóa</option>
+                        <option value="Nghệ An">Nghệ An</option>
+                        <option value="Hà Tĩnh">Hà Tĩnh</option>
+                        <option value="Quảng Bình">Quảng Bình</option>
+                        <option value="Quảng Trị">Quảng Trị</option>
+                        <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Quảng Nam">Quảng Nam</option>
+                        <option value="Quảng Ngãi">Quảng Ngãi</option>
+                        <option value="Bình Định">Bình Định</option>
+                        <option value="Phú Yên">Phú Yên</option>
+                        <option value="Khánh Hòa">Khánh Hòa</option>
+                        <option value="Ninh Thuận">Ninh Thuận</option>
+                        <option value="Bình Thuận">Bình Thuận</option>
+                        <option value="Kon Tum">Kon Tum</option>
+                        <option value="Gia Lai">Gia Lai</option>
+                        <option value="Đắk Lắk">Đắk Lắk</option>
+                        <option value="Đắk Nông">Đắk Nông</option>
+                        <option value="Lâm Đồng">Lâm Đồng</option>
+                        <option value="Bình Phước">Bình Phước</option>
+                        <option value="Tây Ninh">Tây Ninh</option>
+                        <option value="Bình Dương">Bình Dương</option>
+                        <option value="Đồng Nai">Đồng Nai</option>
+                        <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                        <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                        <option value="Long An">Long An</option>
+                        <option value="Tiền Giang">Tiền Giang</option>
+                        <option value="Bến Tre">Bến Tre</option>
+                        <option value="Trà Vinh">Trà Vinh</option>
+                        <option value="Vĩnh Lon">Vĩnh Long</option>
+                        <option value="Đồng Tháp">Đồng Tháp</option>
+                        <option value="An Giang">An Giang</option>
+                        <option value="Kiên Giang">Kiên Giang</option>
+                        <option value="Cần Thơ">Cần Thơ</option>
+                        <option value="Hậu Giang">Hậu Giang</option>
+                        <option value="Sóc Trăng">Sóc Trăng</option>
+                        <option value="Bạc Liêu">Bạc Liêu</option>
+                        <option value="Cà Mau">Cà Mau</option>
                     </select>
                 </p>
 
                 <p class="validate-required" id="billing_city_field">
-                    <label for="billing_city" class="">Quận/Huyện <abbr class="required" title="bắt buộc">*</abbr></label>
+                    <label for="billing_city" class="">Xã/Phường/thị trấn <abbr class="required" title="bắt buộc">*</abbr></label>
 
-                    <select name="billing_city" id="billing_city" class="select " data-allow_clear="true" data-placeholder="Chọn quận huyện" title="Quận/Huyện *" tabindex="-1">
-                        <option value="">--</option>
-                        <option value="001">Quận Ba Đình</option>
-                        <option value="002">Quận Hoàn Kiếm</option>
-                        <option value="003">Quận Tây Hồ</option>
-                        <option value="004">Quận Long Biên</option>
-                        <option value="005">Quận Cầu Giấy</option>
-                        <option value="006">Quận Đống Đa</option>
-                        <option value="007">Quận Hai Bà Trưng</option>
-                        <option value="008">Quận Hoàng Mai</option>
-                        <option value="009">Quận Thanh Xuân</option>
-                        <option value="016">Huyện Sóc Sơn</option>
-                        <option value="017">Huyện Đông Anh</option>
-                        <option value="018">Huyện Gia Lâm</option>
-                        <option value="019">Quận Nam Từ Liêm</option>
-                        <option value="020">Huyện Thanh Trì</option>
-                        <option value="021">Quận Bắc Từ Liêm</option>
-                        <option value="250">Huyện Mê Linh</option>
-                        <option value="268">Quận Hà Đông</option>
-                        <option value="269">Thị xã Sơn Tây</option>
-                        <option value="271">Huyện Ba Vì</option>
-                        <option value="272">Huyện Phúc Thọ</option>
-                        <option value="273">Huyện Đan Phượng</option>
-                        <option value="274">Huyện Hoài Đức</option>
-                        <option value="275">Huyện Quốc Oai</option>
-                        <option value="276">Huyện Thạch Thất</option>
-                        <option value="277">Huyện Chương Mỹ</option>
-                        <option value="278">Huyện Thanh Oai</option>
-                        <option value="279">Huyện Thường Tín</option>
-                        <option value="280">Huyện Phú Xuyên</option>
-                        <option value="281">Huyện Ứng Hòa</option>
-                        <option value="282">Huyện Mỹ Đức</option>
-                    </select>
+                    <input type="text" class="input-text" name="street[]" id="street" placeholder="" autocomplete="tel" value="">
                 </p>
 
                 <p class="validate-required" id="billing_address_2_field">
-                    <label for="billing_address_2" class="">Xã/Phường/thị trấn <abbr class="required" title="bắt buộc">*</abbr></label>
-                    <input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Ví dụ: Phường Thịnh Quang, ..." value="">
+                    <label for="billing_address_2" class="">Địa chỉ <abbr class="required" title="bắt buộc">*</abbr></label>
+                    <input type="text" class="input-text " name="address[]" id="billing_last_name" placeholder="Ví dụ: Số nhà 20 ngõ 35, ..." value="">
                 </p>
-
-                <p class="validate-required" id="billing_address_1_field"><label for="billing_address_1" class="">Địa chỉ <abbr class="required" title="bắt buộc">*</abbr></label><input type="text" class="input-text " name="billing_address_1" id="billing_address_1" placeholder="Ví dụ: Số 20, ngõ 90" autocomplete="address-line1" value=""></p>
 
             </div>
 
@@ -146,7 +113,7 @@
                 <h2>Thông tin thêm</h2>
                 <p class="notes" id="order_comments_field">
                     <label for="order_comments" class="">Ghi chú đơn hàng</label>
-                    <textarea name="order_comments" class="input-text " id="order_comments" placeholder="Ghi chú về đơn hàng, ví dụ: lưu ý khi giao hàng." rows="2" cols="5"></textarea>
+                    <textarea name="property[]" class="input-text " id="order_comments" placeholder="Ghi chú về đơn hàng, ví dụ: lưu ý khi giao hàng." rows="2" cols="5"></textarea>
                 </p>
             </div>
             <div id="order-review" class="order-review">
@@ -154,7 +121,7 @@
                 <table>
                     <thead>
                     <tr>
-                        <th class="product-name center">Sản phẩm</th>
+                        <th class="product-name">Sản phẩm</th>
                         <th class="product-total center">Tổng cộng</th>
                     </tr>
                 </thead>
@@ -173,7 +140,6 @@
                     @endforeach
                 </tbody>
                 <tfoot>
-
                     <tr class="cart-subtotal">
                         <th>Tổng phụ</th>
                         <td class="center"><span>{{ $total }}<span>₫</span></span></td>
@@ -182,9 +148,8 @@
                     <tr class="order-total">
                         <th>Tổng cộng</th>
                         <td class="center"><strong><span>{{ $total }}<span>₫</span></span></strong> </td>
+                        <td><input type="hidden" name="total_price[]"></td>
                     </tr>
-
-
                 </tfoot>
             </table>
 
@@ -193,7 +158,7 @@
                 <ul class="payment-methods methods">
                     @foreach($paymentMethod as $type)
                         <li>
-                            <input id="payment-method-code" type="radio" class="" name="payment-method-radio" value="{{ $type->code }}" @if($type->code == 'cod') checked @endif>
+                            <input id="payment-method-code" type="radio" class="" name="payment_method[]" value="{{ $type->code }}" @if($type->code == 'cod') checked @endif>
 
                             <label for="payment-method-name">{{ $type->name }}</label>
                             <div class="payment-method-desc" id="payment-method-cod-text">
@@ -208,8 +173,7 @@
                     </noscript>
 
                     <input type="submit" class="add-to-cart" name="add-to-cart" id="place_order" value="Đặt hàng" data-value="Đặt hàng">
-
-                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="46937eba2f"><input type="hidden" name="_wp_http_referer" value="/checkout?wc-ajax=update_order_review"> </div>
+                </div>
             </div>
         </div>
     </form>

@@ -40,3 +40,5 @@ Route::patch('cap-nhat-gio-hang', ['as' => 'cap-nhat-gio-hang', 'uses' => 'CartC
 Route::delete('xoa-gio-hang', ['as' => 'xoa-gio-hang', 'uses' => 'CartController@removeCart']);
 
 Route::get('thanh-toan', ['as' => 'thanh-toan', 'uses' => 'CheckoutController@index']);
+
+Route::post('luu-don-hang', ['as' => 'luu-don-hang', 'uses' => 'CheckoutController@saveOrder']);
