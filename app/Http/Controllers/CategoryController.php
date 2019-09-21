@@ -8,14 +8,27 @@ use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
 class CategoryController extends Controller
 {
-    public function __construct() {
-        //
+    private $category;
+
+    private $product;
+
+    public function __construct
+    (
+        Category $category,
+        Product $product
+    )
+    {
+        $this->category = $category;
+        $this->product = $product;
     }
 
     public function index($categorySlug) {
-        $allCategories = Category::get();
-        $categoryBySlug = Category::where('slug', $categorySlug)->first();
-        $product = Product::where('category_id', $categoryBySlug->id)->get();
-        return view('pages.category', compact('allCategories', 'categoryBySlug', 'product'));
+        $categoryBySlug = $this->category->where('slug', $categorySlug)->first();
+        $product = $this->product->where('category_id', $categoryBySlug->id)->get();
+        return view('pages.category', [
+            'all_categories' => $this->category->get(),
+            'category_by_slug' => $categoryBySlug,
+            'product' => $product
+        ]);
     }
 }
