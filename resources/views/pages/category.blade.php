@@ -5,13 +5,13 @@
 @section('content')
     <div class="main-content-title">
         <h1>
-            <span>{{ $category_by_slug->name }}</span>
+            <span>{{ $categoryBySlug->name }}</span>
         </h1>
     </div>
     <div class="grid-products category-types">
         @foreach($product as $item)
             <div class="grid-item">
-                <a class="item-link" href="{{ url('san-pham/' . $category_by_slug->slug . '/' . $item->slug) }}" title="{{ $item->name }}">
+                <a class="item-link" href="{{ url('san-pham/' . $categoryBySlug->slug . '/' . $item->slug) }}" title="{{ $item->name }}">
                     <div class="item-thumb">
                         <img src="{{ asset('storage/uploads/public/'.$item->previewImage->disk_name) }}">
                                                 <div class="sale-sticker"><img src="{{ asset('lacoviet/images/icon_giamgia.png') }}" alt="icon giảm giá"><span class="sale-percent">11%</span></div>

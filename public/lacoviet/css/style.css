@@ -854,11 +854,6 @@ main {
     cursor: pointer;
 }
 
-.add-to-cart span i {
-    font-size: 15px;
-    margin-right: 5px;
-}
-
 /* ================================ Banner =============================== */
 .banner {
     position: relative;
@@ -1483,7 +1478,7 @@ footer {
         transition: 500ms;
     }
 
-    .grid-products .grid-item:hover .item-thumb > img, .grid-item:hover .item-thumb > img, .activity a:hover + img, .video a:hover + img{
+    .grid-products .grid-item:hover .item-thumb > img, .grid-item:hover img, .activity a:hover + img, .video a:hover + img{
         -ms-transform: scale(1.1); /* IE 9 */
         -webkit-transform: scale(1.1); /* Safari 3-8 */
         transform: scale(1.1);

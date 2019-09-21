@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link type="image/x-icon" rel="shortcut icon"
-          href="{{ asset('lacoviet/images/1537884636-Cong-Ty-Laco-Cong-Ty-TNHH-Quoc-Te-Laco.png') }}"/>
+          href="{{ asset('images/1537884636-Cong-Ty-Laco-Cong-Ty-TNHH-Quoc-Te-Laco.png') }}"/>
     <title>@yield('pageTitle') - {{ config('app.name', 'Laravel') }}</title>
     <meta name="keywords" content=""/>
 

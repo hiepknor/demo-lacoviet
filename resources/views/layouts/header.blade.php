@@ -20,7 +20,7 @@
                                 <li class="nav-submenu-item ">
                                     <div class="label">
                                         <i class="fa fa-check" aria-hidden="true"></i>
-                                        <a href="{{ URL::to($catg->slug) }}">{{ $catg->name }}</a>
+                                        <a href="{{ url('san-pham/'.$catg->slug) }}">{{ $catg->name }}</a>
                                     </div>
                                 </li>
                             @endforeach
