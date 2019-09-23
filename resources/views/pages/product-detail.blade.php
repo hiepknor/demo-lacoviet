@@ -64,9 +64,9 @@
 			<span><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Lượt xem: 123</span>
 			<div>
 				<span>Giá bán: </span>
-				<span class="regular-price">75.000 đ</span><br>
-				<span>Tiết kiệm: <span style="color:red;">21.1%</span> </span>
-				<span class="old-price">95.000 đ</span>
+				<span class="regular-price">{{ number_format($productPrice->price, 0, "", ".") }} đ</span><br>
+				<span>Tiết kiệm: <span style="color:red;">{{ number_format(($productPrice->old_price - $productPrice->price) / $productPrice->old_price * 100, 1, ".", "") }}%</span> </span>
+				<span class="old-price">{{ number_format($productPrice->old_price, 0, "", ".") }}đ</span>
 			</div>
 		</div>
 

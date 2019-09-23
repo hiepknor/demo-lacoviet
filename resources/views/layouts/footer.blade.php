@@ -7,7 +7,7 @@
 					<div class="subscribe-form center">
 						<form action="" method="post">
 							<input type="email" name="email" class="subscribe-email" placeholder="Nhập email" required="required">
-							<button type="submit" class="subscribe-submit">Đăng ký</button>
+							<button type="submit" class="subscribe-submit">&nbsp;Đăng ký</button>
 						</form>
 						<div class="subscribe-info">
 							<p>Chúng tôi sẽ gửi các chương trình Khuyến mãi, ưu đãi giảm giá, tri ân khách hàng thân thiết và giới thiệu sản phẩm mới tới Email của bạn.</p>
@@ -18,7 +18,7 @@
 					<h3 class="footer-item-title">Facebook</h3>
 					<div class="footer-facebook">
 						<div class="fanpage">
-							<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.lacoxanh.vn%2F&tabs&width=310&height=250&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="310" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+						<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLACO-Tinh-hoa-L%25C3%25A1-C%25E1%25BB%258F-101240951261862%2F&tabs&width=310&height=250&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="310" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 						</div>
 					</div>
 				</div>

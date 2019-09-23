@@ -37,9 +37,12 @@ class ProductController extends Controller
 
     public function detail($categorySlug, $productSlug) {
         $product = $this->product->whereSlug($productSlug)->first();
+        $productId = $this->product->whereSlug($productSlug)->first()->value('id');
+        $productPrice = $this->offer->whereProductId($productId)->first();
         return view('pages.product-detail', [
             'all_categories' => $this->category->get(),
             'product' => $product,
+            'productPrice' => $productPrice
         ]);
     }
 }

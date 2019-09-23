@@ -9,7 +9,7 @@
             <?php $total += $value['price'] * $value['quantity'] ?>
                 <li>
                 <button data-id="{{ $key }}" class="remove-cart" title="Xóa sản phẩm này">×</button>
-                    <a href="https://hoabanfood.com/sp/thit-bo-gac-bep">
+                    <a href="#">
                         <img width="250" height="140" src="//hoabanfood.com/wp-content/uploads/thit-bo-gac-bep-hoabanfood-1-250x140.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="Thịt Bò Gác Bếp | HOABANFOOD.com">{{ $value['name'] }}&nbsp;
                     </a>
 

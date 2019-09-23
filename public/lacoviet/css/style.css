@@ -436,10 +436,6 @@ main {
     margin: auto;
 }
 
-.cart-table-info .product-remove button {
-    display: block;
-}
-
 .cart-table-info .product-quantity input {
     width: 3.631em;
     border: none;
@@ -454,7 +450,6 @@ main {
     text-transform: uppercase;
     margin-right: 10px;
     font-size: 12px;
-    display: block;
     margin: auto;
     cursor: pointer;
 }

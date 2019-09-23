@@ -26,8 +26,8 @@
                     <th class="product-name">Sản phẩm</th>
                     <th class="product-price">Giá</th>
                     <th class="product-quantity">Số lượng</th>
-                    <th class="product-subtotal">Tổng cộng</th>
-                    <th class="actions">&nbsp;</th>
+                    <th class="product-subtotal">&nbsp;</th>
+                    <th class="actions">Tổng cộng</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,7 +49,7 @@
                     </td>
 
                     <td class="product-price" data-title="Giá">
-                        <span class=" amount">{{ $value['price'] }}<span>₫</span></span> 
+                        <span class=" amount">{{ $value['price'] }}<span>&nbsp;₫</span></span> 
                     </td>
 
                     <td class="product-quantity" data-title="Số lượng">
@@ -58,13 +58,14 @@
                         </div>
                     </td>
 
-                    <td class="product-subtotal center" data-title="Tổng cộng">
-                        <span class=" amount">{{ $value['price'] * $value['quantity'] }}<span>₫</span></span> 
-                    </td>
-
                     <td class="actions">
                         <button data-id="{{ $key }}" class="update-cart" name="update-cart" title="Cập nhật khi thay đổi số lượng">Cập nhật</button>
                      </td>
+
+                    <td class="product-subtotal" data-title="Tổng cộng" style="text-align:right;">
+                        <span class=" amount">{{ $value['price'] * $value['quantity'] }}<span>&nbsp;₫</span></span> 
+                    </td>
+
                 </tr>
             @endforeach
             </tbody>
@@ -75,17 +76,7 @@
 
         <div class="cross-sells">
 
-            <h2>Bạn có thể thích…</h2>
-
-            <ul class="products">
-                <li>
-                    <a href="https://hoabanfood.com/sp/nu-tam-that-500g">
-                        <img src="{{url('lacoviet/images/1556612015-son-sap-laco.jpg')}}" class="cross-sells-img" alt="Nu-tam-that-500gram-saving" title="Nu-tam-that-500gram-saving">
-                        <h3>NỤ TAM THẤT | 500gram</h3>
-
-                        <span class="price"><del><span class="woocommerce-Price-amount amount">740,000<span class="woocommerce-Price-currencySymbol">₫</span></span></del> <ins><span class="price-number">690,000<span class="woocommerce-Price-currencySymbol">₫</span></span></ins></span>
-                    </a><a href="/cart?add-to-cart=14391" rel="nofollow" data-product_id="14391" data-product_sku="" class="add-to-cart center"><i class="fa fa-shopping-cart cart-icon"></i> ĐẶT MUA NGAY</a></li>
-            </ul>
+            
 
         </div>
 
@@ -163,6 +154,33 @@
                 });
             }
         });
+
+    function increment_quantity(cart_id) {
+        var inputQuantityElement = $("#input-quantity-"+cart_id);
+        var newQuantity = parseInt($(inputQuantityElement).val())+1;console.log(newQuantity);
+        //save_to_db(cart_id, newQuantity);
+    }
+
+    function decrement_quantity(cart_id) {
+        var inputQuantityElement = $("#input-quantity-"+cart_id);
+        if($(inputQuantityElement).val() > 1) 
+        {
+            var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
+            //save_to_db(cart_id, newQuantity);
+        }
+    }
+
+    function save_to_db(cart_id, new_quantity) {
+        var inputQuantityElement = $("#input-quantity-"+cart_id);
+        $.ajax({
+            url : "update_cart_quantity.php",
+            data : "cart_id="+cart_id+"&new_quantity="+new_quantity,
+            type : 'post',
+            success : function(response) {
+                $(inputQuantityElement).val(new_quantity);
+            }
+        });
+    }
  
     </script>
  
