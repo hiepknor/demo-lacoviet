@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Offer;
 
 class CategoryController extends Controller
 {

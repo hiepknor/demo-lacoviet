@@ -33,7 +33,7 @@
 
 						<p><strong>Hotline:</strong> <a href="tel: 0979142286"><span style="color:#86b732"><span style="font-size:16px"><strong>0979 142 286 (Zalo,viber,...)</strong></span></span></a></p>
 
-						<p><strong>Website:</strong> www.lacoviet.vn</p>
+						<p><strong>Website:</strong> lacoviet.vn</p>
 
 						<p><strong>Mã số thuế:</strong>&nbsp;0107758029</p>
 					</div>

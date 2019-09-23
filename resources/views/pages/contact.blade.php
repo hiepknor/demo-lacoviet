@@ -20,7 +20,7 @@
 
             <p><strong>Hotline:</strong>&nbsp;<a href="tel:0979 142 286"><span style="color:rgb(134, 183, 50)"><strong>0979 142 286 (Zalo,viber,...)</strong></span></a></p>
 
-            <p><strong>Website:</strong>&nbsp;www.lacoxanh.vn</p>
+            <p><strong>Website:</strong>&nbsp;lacoviet.vn</p>
 
             <p><strong>Mã số thuế:</strong>&nbsp;0107758029</p>
         </div>

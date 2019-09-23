@@ -77,11 +77,9 @@
 		</div>
 
 		<div class="addition-info">
-			<p><img alt="icon dam bao" src="{{url('images/laco/icon_chatluong.png')}}">&nbsp;<span style="color:#000000">Cam kết hàng chính hãng</span></p>
+			<p><img alt="icon dam bao" src="{{ asset('lacoviet/images/laco/icon_chatluong.png') }}">&nbsp;<span style="color:#000000">Cam kết hàng chính hãng</span></p>
 
-			<p><a href="https://goo.gl/maps/E7bt5eQCye12"><img alt="icon dam bao" src="{{url('images/laco/icon_chatluong1.png')}}">&nbsp;<span style="color:#0280ff">Chỉ đường đến Lacoxanh.vn</span></a></p>
-
-			<p><img alt="icon dam bao" src="{{url('images/laco/icon_vanchuyen.png')}}" style="height:16px; margin:0px; max-width:100%; padding:0px; width:16px">&nbsp;<span style="color:#000000">Giao hàng miễn phí từ&nbsp;2 sản phẩm trở lên</span></p>
+			<p><img alt="icon dam bao" src="{{ asset('lacoviet/images/laco/icon_vanchuyen.png') }}" style="height:16px; margin:0px; max-width:100%; padding:0px; width:16px">&nbsp;<span style="color:#000000">Giao hàng miễn phí từ&nbsp;2 sản phẩm trở lên</span></p>
 		</div>
 	</div>
 </div>
@@ -93,7 +91,7 @@
 	</div>
 
 	<div class="description-text">
-		{{ $product->description }}
+		{{ strip_tags($product->description) }}
 	</div>
 
 	<div class="like-share" style="margin:15px 0px;text-align: right;">
