@@ -31,9 +31,9 @@
 
 						<p><strong>Trụ sở:</strong> Số 44 Tổ 17 Khu GĐ Văn công Quân Đội, phố Mai Dịch, Phường Mai Dịch, Quận Cầu Giấy, Thành phố Hà Nội</p>
 
-						<p><strong>Hotline:</strong> <a href="tel: 0982 11 8898"><span style="color:#86b732"><span style="font-size:16px"><strong>0982 11 8898 (Zalo,viber,...)</strong></span></span></a></p>
+						<p><strong>Hotline:</strong> <a href="tel: 0979142286"><span style="color:#86b732"><span style="font-size:16px"><strong>0979 142286 (Zalo,viber,...)</strong></span></span></a></p>
 
-						<p><strong>Website:</strong> www.lacoxanh.vn</p>
+						<p><strong>Website:</strong> www.lacoviet.vn</p>
 
 						<p><strong>Mã số thuế:</strong>&nbsp;0107758029</p>
 					</div>
@@ -59,7 +59,7 @@
 
 	<div class="icon-contact">
 		<div class="icon-phone">
-			<a href="tel:0982 11 8898"><i class="fa fa-phone" aria-hidden="true"></i> 0982 11 8898</a>
+			<a href="tel:0979142286"><i class="fa fa-phone" aria-hidden="true"></i>0979 142286</a>
 		</div>
 	</div>
 </footer>
@@ -69,7 +69,7 @@
 <script type="text/javascript">
 	(function () {
 		var options = {
-            facebook: "468048703708135", // Facebook page ID
+            facebook: "101240951261862", // Facebook page ID
             greeting_message: "Xin chào!. Chat qua đây nhé,", // Text of greeting message
             call_to_action: "Chat qua Facebook", // Call to action
             button_color: "#129BF4", // Color of button
