@@ -18,7 +18,7 @@
 
             <p><strong>Trụ sở:</strong>&nbsp;Số 44 Tổ 17 Khu GĐ Văn công Quân Đội, phố Mai Dịch, Phường Mai Dịch, Quận Cầu Giấy, Thành phố Hà Nội</p>
 
-            <p><strong>Hotline:</strong>&nbsp;<a href="tel:0982 11 8898"><span style="color:rgb(134, 183, 50)"><strong>0982 11 8898 (Zalo,viber,...)</strong></span></a></p>
+            <p><strong>Hotline:</strong>&nbsp;<a href="tel:0979 142 286"><span style="color:rgb(134, 183, 50)"><strong>0979 142 286 (Zalo,viber,...)</strong></span></a></p>
 
             <p><strong>Website:</strong>&nbsp;www.lacoxanh.vn</p>
 

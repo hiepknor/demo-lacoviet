@@ -464,9 +464,9 @@ main {
 .checkout-form .billing-addition h2,
 .checkout-form .order-review h3 {
     position: relative;
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
     border-bottom: 2px solid #C9C9C9;
-    height: 40px;
+    height: 30px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -510,7 +510,7 @@ main {
 }
 
 .cart-calculate .cross-sells, .cart-calculate .cart-totals {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .button-back {

@@ -13,12 +13,12 @@
                         <img width="250" height="140" src="//hoabanfood.com/wp-content/uploads/thit-bo-gac-bep-hoabanfood-1-250x140.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="Thịt Bò Gác Bếp | HOABANFOOD.com">{{ $value['name'] }}&nbsp;
                     </a>
 
-                    <span class="quantity">{{ $value['quantity'] }} × <span class="woocommerce-Price-amount amount">{{ $value['price'] }}<span class="woocommerce-Price-currencySymbol">₫</span></span></span>
+                    <span class="quantity">{{ $value['quantity'] }} × <span class="woocommerce-Price-amount amount">{{ number_format($value['price'], 0, "", ".") }}<span>&nbsp;₫</span></span></span>
                 </li>
             @endforeach
         </ul>
 
-        <p class="total"><strong>Tổng phụ:</strong> <span class="woocommerce-Price-amount amount">{{ $total }}<span class="woocommerce-Price-currencySymbol">₫</span></span></p>
+        <p class="total center"><strong>Tổng phụ:</strong> <span class="woocommerce-Price-amount amount">{{ number_format($total, 0, "", ".") }}<span>&nbsp;₫</span></span></p>
 
         <p class="buttons">
             <a href="{{ route('gio-hang') }}" class="view-cart center">Xem giỏ hàng</a>

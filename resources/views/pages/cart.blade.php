@@ -10,7 +10,7 @@
 </div>
 
 <div class="main-content-text">
-    <p>Cám ơn Quý Khách đã tin dùng & ủng hộ các sản phẩm do anh chị em chúng tôi khai thác & chế biến. Xin vui lòng điền các thông tin cần thiết ở bước kế tiếp để đặt hàng.</p>
+    <p>Cám ơn Quý Khách đã tin dùng & ủng hộ các sản phẩm của chúng tôi. Xin vui lòng điền các thông tin cần thiết ở bước kế tiếp để đặt hàng.</p>
 
     <?php $total = 0 ?>
     @if(session('cart'))
@@ -49,7 +49,7 @@
                     </td>
 
                     <td class="product-price" data-title="Giá">
-                        <span class=" amount">{{ $value['price'] }}<span>&nbsp;₫</span></span> 
+                        <span class=" amount">{{ number_format($value['price'], 0, "", ".") }}<span>&nbsp;₫</span></span> 
                     </td>
 
                     <td class="product-quantity" data-title="Số lượng">
@@ -63,7 +63,7 @@
                      </td>
 
                     <td class="product-subtotal" data-title="Tổng cộng" style="text-align:right;">
-                        <span class=" amount">{{ $value['price'] * $value['quantity'] }}<span>&nbsp;₫</span></span> 
+                        <span class=" amount">{{ number_format($value['price'] * $value['quantity'], 0, "", ".") }}<span>&nbsp;₫</span></span> 
                     </td>
 
                 </tr>
@@ -88,15 +88,9 @@
             <table cellspacing="0" class="cart-table-price">
 
                 <tbody>
-                    <tr class="cart-subtotal">
-                        <th>Tổng phụ</th>
-                        <td data-title="Tổng phụ" class="center"><span class="amount">{{ $total }}<span class="woocommerce-Price-currencySymbol">₫</span></span></td>
-                    </tr>
-
-
                     <tr class="order-total">
                         <th>Tổng cộng</th>
-                        <td data-title="Tổng cộng" class="center"><strong><span class="amount">{{ $total }}<span class="woocommerce-Price-currencySymbol">₫</span></span></strong> </td>
+                        <td data-title="Tổng cộng" style="text-align:right;"><strong><span class="amount">{{ number_format($total, 0, "", ".") }}<span>&nbsp;₫</span></span></strong> </td>
                     </tr>
                 </tbody>
             </table>

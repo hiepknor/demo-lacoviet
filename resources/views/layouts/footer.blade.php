@@ -31,7 +31,7 @@
 
 						<p><strong>Trụ sở:</strong> Số 44 Tổ 17 Khu GĐ Văn công Quân Đội, phố Mai Dịch, Phường Mai Dịch, Quận Cầu Giấy, Thành phố Hà Nội</p>
 
-						<p><strong>Hotline:</strong> <a href="tel: 0979142286"><span style="color:#86b732"><span style="font-size:16px"><strong>0979 142286 (Zalo,viber,...)</strong></span></span></a></p>
+						<p><strong>Hotline:</strong> <a href="tel: 0979142286"><span style="color:#86b732"><span style="font-size:16px"><strong>0979 142 286 (Zalo,viber,...)</strong></span></span></a></p>
 
 						<p><strong>Website:</strong> www.lacoviet.vn</p>
 
@@ -59,7 +59,7 @@
 
 	<div class="icon-contact">
 		<div class="icon-phone">
-			<a href="tel:0979142286"><i class="fa fa-phone" aria-hidden="true"></i>0979 142286</a>
+			<a href="tel:0979142286"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;0979 142 286</a>
 		</div>
 	</div>
 </footer>
