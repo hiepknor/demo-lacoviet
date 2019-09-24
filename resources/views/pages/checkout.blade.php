@@ -123,20 +123,22 @@
                 </p>
             </div>
 
-            <h3>Phương thức thanh toán</h3>
-            <div id="payment" class="checkout-payment">
-                <ul class="payment-methods methods">
-                    @foreach($paymentMethod as $method)
-                        <li>
-                            <input id="payment-method-code" type="radio" class="" name="payment_method" value="{{ $method->id }}" @if($method->code == 'cod') checked @endif>
+            <div class="billing-payment">
+                <h2>Phương thức thanh toán</h2>
+                <div id="payment" class="checkout-payment">
+                    <ul class="payment-methods methods">
+                        @foreach($paymentMethod as $method)
+                            <li>
+                                <input id="payment-method-code" type="radio" class="payment-method-input" name="payment_method" value="{{ $method->id }}" @if($method->code == 'cod') checked @endif>
 
-                            <label for="payment-method-name">{{ $method->name }}</label>
-                            <div class="payment-method-desc" id="payment-method-cod-text">
-                                <p>{{ $method->description }}</p>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
+                                <label for="payment-method-name">{{ $method->name }}</label><br>
+                                <div class="payment-method-desc" id="payment-method-text">
+                                    <p>{{ $method->description }}</p>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
 
             @if(session('cart'))
@@ -145,7 +147,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="product-name">Sản phẩm</th>
+                            <th class="product-name center">Sản phẩm</th>
                             <th class="product-total center">Tổng cộng</th>
                         </tr>
                     </thead>
@@ -166,7 +168,7 @@
                     <tfoot>
                         <tr class="order-total">
                             <th>Tổng cộng</th>
-                            <td class="center"><strong><span>{{ formatPrice($total + ($total * 10 / 100)) }}<span>&nbsp;₫</span></span></strong> </td>
+                            <td class="center"><strong><span>{{ formatPrice($total) }}<span>&nbsp;₫</span></span></strong> </td>
                             <td><input type="hidden" name="total_price" value="{{ $total + ($total * 10 / 100) }}"></td>
                         </tr>
                     </tfoot>

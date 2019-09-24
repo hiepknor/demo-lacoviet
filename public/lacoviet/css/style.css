@@ -462,6 +462,7 @@ main {
 .cart-calculate .cart-totals h2,
 .checkout-form .billing-fields h2,
 .checkout-form .billing-addition h2,
+.checkout-form .billing-payment h2,
 .checkout-form .order-review h3 {
     position: relative;
     margin: 20px 0 5px 0;
@@ -475,6 +476,7 @@ main {
 .cart-calculate .cart-totals h2::before,
 .checkout-form .billing-fields h2::before,
 .checkout-form .billing-addition h2::before,
+.checkout-form .billing-payment h2::before,
 .checkout-form .order-review h3::before {
     width: 120px;
     height: 2px;
@@ -536,12 +538,23 @@ main {
 }
 
 .payment-methods li {
-    display: flex;
-    align-items: center;
+    display: inline-block;
 }
 
 .payment-methods li label {
     margin-bottom: 0;
+}
+
+.payment-methods .payment-method-input {
+    float: left;
+    margin-right: 5px;
+}
+
+.payment-methods .payment-method-desc {
+    background-color: #dfdcdf;
+    padding: 10px;
+    text-align: justify;
+    margin: 10px;
 }
 
 .checkout-form .customer-details input, .checkout-form .customer-details select {
@@ -588,6 +601,10 @@ main {
 .checkout-form .order-review tbody td, .checkout-form .order-review tfoot th, .checkout-form .order-review tfoot td {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
+}
+
+.checkout-form .order-review td.product-name, .checkout-form .order-review .order-total th{
+    padding-left: 10px;
 }
 
 /* Contact page */
@@ -1178,6 +1195,11 @@ footer {
     .customer-details .billing-addition {
         width: 48%;
         float: right;
+    }
+
+    .customer-details .billing-payment {
+        clear: both;
+        display: inline-block;
     }
 
     .order-review {
