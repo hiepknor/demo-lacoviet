@@ -704,6 +704,11 @@ main {
     padding: 5px 15px;
 }
 
+.side-bar .cart-list-items .quantity {
+    display: block;
+    margin-left: 115px;
+}
+
 .side-bar .cart-list-items img {
     width: 70px;
     height: auto;
