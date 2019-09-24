@@ -18,6 +18,8 @@
             @endforeach
         </ul>
 
+        <p class="total center"><strong>Tổng cộng:</strong> <span class="woocommerce-Price-amount amount">{{ number_format($total, 0, "", ".") }}<span>&nbsp;₫</span></span></p>
+        
         <p class="buttons">
             <a href="{{ route('gio-hang') }}" class="view-cart center">Xem giỏ hàng</a>
             <a href="{{ route('thanh-toan') }}" class="view-checkout center">Thanh toán</a>
