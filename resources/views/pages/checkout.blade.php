@@ -164,16 +164,6 @@
                             @endforeach
                     </tbody>
                     <tfoot>
-                        <tr class="cart-subtotal">
-                            <th>Tổng phụ</th>
-                            <td class="center"><span>{{ formatPrice($total) }}<span>&nbsp;₫</span></span></td>
-                        </tr>
-
-                        <tr class="cart-subtotal">
-                            <th>VAT (10%)</th>
-                            <td class="center"><span>{{ formatPrice($total * 10 / 100) }}<span>&nbsp;₫</span></span></td>
-                        </tr>
-
                         <tr class="order-total">
                             <th>Tổng cộng</th>
                             <td class="center"><strong><span>{{ formatPrice($total + ($total * 10 / 100)) }}<span>&nbsp;₫</span></span></strong> </td>
