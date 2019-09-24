@@ -41,11 +41,11 @@
                     </td>
 
                     <td class="product-thumbnail center">
-                        <a href="https://hoabanfood.com/sp/nu-tam-that"><img width="250" height="140" src="{{url('lacoviet/images/1556612015-son-sap-laco.jpg')}}"></a> 
+                        <a href="{{ URL::to('san-pham/' . $value['category_slug'] . '/' . $value['product_slug']) }}"><img width="250" height="140" src="{{ asset('storage/uploads/public/'.$value['photo']) }}"></a> 
                     </td>
 
                     <td class="product-name" data-title="Sản phẩm">
-                        <a href="">{{ $value['name'] }}</a> 
+                        <a href="{{ URL::to('san-pham/' . $value['category_slug'] . '/' . $value['product_slug']) }}">{{ $value['name'] }}</a> 
                     </td>
 
                     <td class="product-price" data-title="Giá">

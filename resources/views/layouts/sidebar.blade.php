@@ -9,8 +9,8 @@
             <?php $total += $value['price'] * $value['quantity'] ?>
                 <li>
                 <button data-id="{{ $key }}" class="remove-cart" title="Xóa sản phẩm này">×</button>
-                    <a href="#">
-                        <img width="250" height="140" src="//hoabanfood.com/wp-content/uploads/thit-bo-gac-bep-hoabanfood-1-250x140.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="Thịt Bò Gác Bếp | HOABANFOOD.com">{{ $value['name'] }}&nbsp;
+                    <a href="{{ URL::to('san-pham/' . $value['category_slug'] . '/' . $value['product_slug']) }}">
+                        <img width="250" height="140" src="{{ asset('storage/uploads/public/'.$value['photo']) }}" class="attachment-shop_thumbnail size-shop_thumbnail" alt="{{ $value['name'] }}">{{ $value['name'] }}&nbsp;
                     </a>
 
                     <span class="quantity">{{ $value['quantity'] }} × <span class="woocommerce-Price-amount amount">{{ number_format($value['price'], 0, "", ".") }}<span>&nbsp;₫</span></span></span>

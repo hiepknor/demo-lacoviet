@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Offer;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
+use Mckenziearts\Shopper\Models\Media;
 
 class ProductController extends Controller
 {
@@ -15,16 +16,20 @@ class ProductController extends Controller
 
     private $offer;
 
+    private $media;
+
     public function __construct
     (
         Category $category,
         Product $product,
-        Offer $offer
+        Offer $offer,
+        Media $media
     )
     {
         $this->category = $category;
         $this->product = $product;
         $this->offer = $offer;
+        $this->media = $media;
     }
 
     public function index() {
@@ -36,13 +41,15 @@ class ProductController extends Controller
     }
 
     public function detail($categorySlug, $productSlug) {
-        $product = $this->product->whereSlug($productSlug)->first();
-        $productId = $this->product->whereSlug($productSlug)->first()->value('id');
-        $productPrice = $this->offer->whereProductId($productId)->first();
+        $product = $this->product->whereSlug($productSlug);
+        $productId = $this->product->whereSlug($productSlug)->value('id');
+        $productPrice = $this->offer->whereProductId($productId);
+        $media = $this->media->whereId($productId);
         return view('pages.product-detail', [
             'all_categories' => $this->category->get(),
             'product' => $product,
-            'productPrice' => $productPrice
+            'productPrice' => $productPrice,
+            'media' => $media
         ]);
     }
 }

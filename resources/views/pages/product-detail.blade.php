@@ -9,69 +9,33 @@
 			<div class="slider-for">
 				<div>
 					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556612015-son-sap-laco.jpg')}}" alt="Son sap 1"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556612005-son-sap-laco.jpg')}}" alt="Son sap 2"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556611992-son-sap-laco.jpg')}}" alt="Son sap 3"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556611965-son-sap-laco.jpg')}}" alt="Son sap 4"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556613254-son-sap-laco.jpg')}}" alt="Son sap 5"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556611980-son-sap-laco.jpg')}}" alt="Son sap 6"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556613268-son-sap-laco.jpg')}}" alt="Son sap 7"></div>
+						<div class="img-fill"><img src="{{ asset('storage/uploads/public/'.$media->value('disk_name')) }}" alt="Son sap 1"></div>
 					</div>
 				</div>
 			</div>
 			<div class="slider-nav">
 				<div>
 					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556612015-son-sap-laco.jpg')}}" alt="Son sap 1"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556612005-son-sap-laco.jpg')}}" alt="Son sap 2"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556611992-son-sap-laco.jpg')}}" alt="Son sap 3"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556611965-son-sap-laco.jpg')}}" alt="Son sap 4"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556613254-son-sap-laco.jpg')}}" alt="Son sap 5"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556611980-son-sap-laco.jpg')}}" alt="Son sap 6"></div>
-					</div>
-					<div class="item">
-						<div class="img-fill"><img src="{{url('images/1556613268-son-sap-laco.jpg')}}" alt="Son sap 7"></div>
+						<div class="img-fill"><img src="{{ asset('storage/uploads/public/'.$media->value('disk_name')) }}" alt="Son sap 1"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="specific-info">
-		<h4 class="info-name">{{ $product->name }}</h4>
+		<h4 class="info-name">{{ $product->value('name') }}</h4>
 		<div class="info-price">
 			<span><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Lượt xem: 123</span>
 			<div>
 				<span>Giá bán: </span>
-				<span class="regular-price">{{ number_format($productPrice->price, 0, "", ".") }} đ</span><br>
-				<span>Tiết kiệm: <span style="color:red;">{{ number_format(($productPrice->old_price - $productPrice->price) / $productPrice->old_price * 100, 1, ".", "") }}%</span> </span>
-				<span class="old-price">{{ number_format($productPrice->old_price, 0, "", ".") }}đ</span>
+				<span class="regular-price">{{ number_format($productPrice->value('price'), 0, "", ".") }} đ</span><br>
+				<span>Tiết kiệm: <span style="color:red;">{{ number_format(($productPrice->value('old_price') - $productPrice->value('price')) / $productPrice->value('old_price') * 100, 1, ".", "") }}%</span> </span>
+				<span class="old-price">{{ number_format($productPrice->value('old_price'), 0, "", ".") }}đ</span>
 			</div>
 		</div>
 
 		<div>
-			<a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $product->id) }}">
+			<a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $product->value('id')) }}">
 				<span><i class="fa fa-cart-plus" aria-hidden="true"></i>Đặt mua ngay</span>
 			</a>
 		</div>
@@ -91,7 +55,7 @@
 	</div>
 
 	<div class="description-text">
-		{{ strip_tags($product->description) }}
+		{{ strip_tags($product->value('description')) }}
 	</div>
 
 	<div class="like-share" style="margin:15px 0px;text-align: right;">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Mckenziearts\Shopper\Models\Media;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Product;
 
@@ -33,6 +34,8 @@ class CartController extends Controller
     public function addToCart($id)
     {
         $product = Product::find($id);
+        $photo = Media::find($id);
+        $category = Category::find($product->category_id);
 
         if (!$this->product) {
 
@@ -46,11 +49,13 @@ class CartController extends Controller
 
             $cart = [
                 $id => [
-                    "id" => $id,
-                    "name" => $product->name,
-                    "quantity" => 1,
-                    "price" => $this->roundPrice($product->offers()->value('price')),
-                    "photo" => $product->photo
+                    "id"            => $id,
+                    "name"          => $product->name,
+                    "quantity"      => 1,
+                    "price"         => $this->roundPrice($product->offers()->value('price')),
+                    "photo"         => $photo->disk_name,
+                    "product_slug"  => $product->slug,
+                    "category_slug" => $category->slug
                 ]
             ];
 
@@ -75,7 +80,9 @@ class CartController extends Controller
             "name" => $product->name,
             "quantity" => 1,
             "price" => $this->roundPrice($product->offers()->value('price')),
-            "photo" => $product->photo
+            "photo" => $photo->disk_name,
+            "product_slug" => $product->slug,
+            "category_slug" => $category->slug
         ];
 
         session()->put('cart', $cart);
