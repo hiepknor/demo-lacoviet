@@ -169,7 +169,7 @@
                         <tr class="order-total">
                             <th>Tổng cộng</th>
                             <td class="center"><strong><span>{{ formatPrice($total) }}<span>&nbsp;₫</span></span></strong> </td>
-                            <td><input type="hidden" name="total_price" value="{{ $total + ($total * 10 / 100) }}"></td>
+                            <td><input type="hidden" name="total_price" value="{{ $total }}"></td>
                         </tr>
                     </tfoot>
                 </table>

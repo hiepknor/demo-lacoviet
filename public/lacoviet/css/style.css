@@ -1264,7 +1264,7 @@ footer {
     }
 
     .copyright {
-        padding: 50px 0;
+        padding: 25px 0;
         display: flex;
         width: 100%;
         justify-content: space-between;
@@ -1546,7 +1546,7 @@ footer {
     }
 
     .footer-block-item {
-        width: 48%;
+        width: 30%;
     }
 
     .icon-phone {

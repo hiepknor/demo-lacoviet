@@ -77,6 +77,7 @@ class CheckoutController extends Controller
     }
 
     public function saveOrder(Request $request) {
+
         $this->saveCustomer($request);
 
         $this->saveAddress($request);
@@ -100,7 +101,7 @@ class CheckoutController extends Controller
         $order->order_number = $now."ORDER".$order->id;
         $order->secret_key = "";
         $order->total_price = $request->total_price;
-        $order->shipping_price = "20000.00";
+        $order->shipping_price = 0;
         $order->shipping_type_id = 1;
         $order->payment_method_id = $request->payment_method;
         $order->property = $request->property;
@@ -108,6 +109,6 @@ class CheckoutController extends Controller
         $order->save();
 
         session()->flush();
-        return response()->json(['success' => 'Product ordered successfully!']);
+        return redirect('dat-hang-thanh-cong');
     }
 }

@@ -1,5 +1,5 @@
 <div class="side-bar">
-    <p class="side-title"><a href="/gio-hang">Giỏ hàng</a></p>
+    <p class="side-title"><a href="#">Giỏ hàng</a></p>
 
     <?php $total = 0 ?>
     @if(session('cart'))
@@ -32,7 +32,7 @@
     </ul>
     @endif
 
-    <p class="side-title"><a href="/tin-tuc">Tin tức mới</a></p>
+    <p class="side-title"><a href="#">Tin tức mới</a></p>
     <ul class="side-list-news">
         {{-- @foreach($sidebar_data as $item)--}}
         {{-- <li>--}}

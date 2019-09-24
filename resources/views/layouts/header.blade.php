@@ -3,7 +3,7 @@
     <div class="container">
         <div class="header-wrap">
             <div class="logo">
-                <a href="/" title="{{ config('app.name', 'Laravel') }}">
+                <a href="/" title="{{ config('app.name', 'Lacoviet') }}">
                     <img src="{{ asset('lacoviet/images/1537885227-Cong-Ty-Laco-Cong-Ty-TNHH-Quoc-Te-Laco.png') }}" alt="{{ config('app.name', 'Laravel') }}">
                 </a>
             </div>

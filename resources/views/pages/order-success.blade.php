@@ -1,15 +1,3 @@
-@section('script')
-    <script type="text/javascript">
+<link rel="stylesheet" href="{{ asset('lacoviet/css/style.css') }}">
 
-        $.ajaxSetup({
-
-            headers: {
-
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-    </script>
-@endsection
-
-
+<h1>Đặt hàng thành công</h1>

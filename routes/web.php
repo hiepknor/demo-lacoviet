@@ -43,4 +43,4 @@ Route::get('thanh-toan', ['as' => 'thanh-toan', 'uses' => 'CheckoutController@in
 
 Route::post('luu-don-hang', ['as' => 'luu-don-hang', 'uses' => 'CheckoutController@saveOrder']);
 
-Route::get('saveOrder', ['as' => 'dat-hang-thanh-cong', 'uses' => 'CheckoutController@saveOrder']);
+Route::get('dat-hang-thanh-cong', ['as' => 'dat-hang-thanh-cong', 'uses' => 'OrderSuccessController@index']);
