@@ -82,9 +82,6 @@
 
         <div class="cart-totals">
 
-
-            <h2>Tổng giỏ hàng</h2>
-
             <table cellspacing="0" class="cart-table-price">
 
                 <tbody>
