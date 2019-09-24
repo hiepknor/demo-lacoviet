@@ -21,7 +21,9 @@
                         <span class="promotion-price center">{{ $item->price }}</span>
                     </div>
                 </a>
-                <button class="add-to-cart center">Đặt mua ngay</button>
+                <a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $item->id) }}">
+                    <span><i class="fa fa-cart-plus" aria-hidden="true"></i>Đặt mua ngay</span>
+                </a>
             </div>
         @endforeach
     </div>
