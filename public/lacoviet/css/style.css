@@ -206,9 +206,11 @@ main {
     width: 100%;
 }
 
-.rev-banner .slide-item .slide-img img {
-    padding: 10px 0;
+.rev-banner .slide-item img {
+    width: 100%;
+    margin-top: 30px;
 }
+
 
 /* ================================ Breadcrumb ===========================*/
 .breadcrumb {
@@ -446,7 +448,7 @@ main {
     color: #5d5d5d;
     background: #e0e0e0;
     border: none;
-    height: 25px;
+    height: 22px;
     text-transform: uppercase;
     margin-right: 10px;
     font-size: 12px;

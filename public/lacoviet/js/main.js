@@ -119,4 +119,17 @@ $(document).ready(function () {
 
     $('.slick-prev').html('<');
     $('.slick-next').html('>');
+
+    // Checked radio to show/hide description
+    $('.payment-method-desc').last().hide();
+
+    $('.payment-method-input').last().click(function(){
+      $('.payment-method-desc').first().hide();
+      $('.payment-method-desc').last().show();
+    })
+
+    $('.payment-method-input').first().click(function(){
+      $('.payment-method-desc').last().hide();
+      $('.payment-method-desc').first().show();
+    })
 });

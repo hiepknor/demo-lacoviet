@@ -2,9 +2,7 @@
     <div class="rev-banner">
         <div class="slides">
             <div class="slide-item">
-                <a href="#" class="slide-img">
-                    <img src="{{ asset('lacoviet/images/laco/banner_list.jpg') }}" alt="">
-                </a>
+                <img src="{{ asset('lacoviet/images/slide/1537983294-vi-Slider-2.jpg') }}" alt="1537983294-vi-Slider-2.jpg">
             </div>
         </div>
     </div>

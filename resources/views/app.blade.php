@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link type="image/x-icon" rel="shortcut icon"
           href="{{ asset('lacoviet/images/1537884636-Cong-Ty-Laco-Cong-Ty-TNHH-Quoc-Te-Laco.png') }}"/>
-    <title>@yield('pageTitle') - {{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('pageTitle') - Lacoviet</title>
     <meta name="keywords" content=""/>
 
     <!-- Include css -->

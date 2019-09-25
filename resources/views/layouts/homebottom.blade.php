@@ -7,7 +7,7 @@
             độc quyền từ Ấn Độ; phù hợp với tóc và da đầu phụ nữ Việt Nam và đặc biệt hoàn toàn an
             toàn với phụ
             nữ trong thời kỳ&nbsp;mang thai..</p>
-        <a class="banner-more" href="https://www.lacoxanh.vn/San-pham/">Xem sản phẩm</a>
+        <a class="banner-more" href="{{ URL::to('san-pham') }}">Xem sản phẩm</a>
     </div>
 </div>
 
