@@ -17,8 +17,12 @@
                     </div>
                     <div class="item-name center">{{ $item->name }}</div>
                     <div class="item-price">
-                        <span class="unit-price center"></span>
-                        <span class="promotion-price center">{{ $item->price }}</span>
+                        @if($offer->where('product_id', $item->id)->value('old_price') == 0)
+                            <span class="unit-price center"></span>
+                        @else
+                            <span class="unit-price center">{{ formatPrice($offer->where('product_id', $item->id)->value('old_price')) }}&nbsp;₫</span>
+                        @endif
+                        <span class="promotion-price center">{{ formatPrice($offer->where('product_id', $item->id)->value('price')) }}&nbsp;₫</span>
                     </div>
                 </a>
                 <a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $item->id) }}">
