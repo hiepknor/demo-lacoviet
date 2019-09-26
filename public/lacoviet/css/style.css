@@ -434,7 +434,6 @@ main {
     border: none;
     cursor: pointer;
     height: 25px;
-    margin: auto;
 }
 
 .cart-table-info .product-quantity input {
@@ -703,6 +702,9 @@ main {
 .side-bar .cart-list-items li {
     border-bottom: 1px solid #eee;
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .side-bar .cart-list-items .total {
@@ -720,11 +722,6 @@ main {
     color: #515151;
     background-color: #ebe9eb;
     padding: 5px 15px;
-}
-
-.side-bar .cart-list-items .quantity {
-    display: block;
-    margin-left: 115px;
 }
 
 .side-bar .cart-list-items img {
