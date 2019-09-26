@@ -70,3 +70,9 @@ Breadcrumbs::for('thanh-toan', function ($trail) {
     $trail->parent('trang-chu');
     $trail->push('Thanh toán', route('thanh-toan'));
 });
+
+// Trang chu > Thanh toan
+Breadcrumbs::for('dat-hang-thanh-cong', function ($trail) {
+    $trail->parent('trang-chu');
+    $trail->push('Đặt hàng thành công', route('dat-hang-thanh-cong'));
+});

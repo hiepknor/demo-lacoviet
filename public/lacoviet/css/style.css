@@ -454,6 +454,10 @@ main {
     cursor: pointer;
 }
 
+.cart-table-info .product-subtotal {
+    margin-bottom: 30px;
+}
+
 .cart-calculate {
     margin-top: 20px;
 }
@@ -653,6 +657,17 @@ main {
     font-size: 16px;
     margin: 0;
     font-weight: bold;
+}
+
+/* Order success page */
+.order-success-title{
+    color: var(--theme-color);
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+.order-success-text {
+    padding: 15px 0;
 }
 
 /* Sidebar */
@@ -1448,6 +1463,7 @@ footer {
 
     .cart-table-info .product-subtotal {
         width: 15%;
+        margin-bottom: unset;
     }
 
     .cart-table-info .actions {

@@ -18,17 +18,17 @@
                 <h2>Thông tin thanh toán</h2>
 
                 <p class="validate-required" id="billing_last_name_field">
-                    <label for="billing_last_name" >Họ và tên <abbr class="required" title="bắt buộc">*</abbr></label><input type="text" class="input-text " name="name" id="name" placeholder="Nhập đầy đủ họ và tên" value="">
+                    <label for="billing_last_name" >Họ và tên <abbr class="required" title="bắt buộc">*</abbr></label><input type="text" class="input-text " name="name" id="name" placeholder="Nhập đầy đủ họ và tên" value="" required="required">
                 </p>
 
                 <p class=" validate-required validate-phone" id="billing_phone_field">
-                    <label for="billing_phone" >Số điện thoại <abbr class="required" title="bắt buộc">*</abbr></label><input type="tel" class="input-text " name="phone" id="phone" placeholder="" autocomplete="tel" value="">
+                    <label for="billing_phone" >Số điện thoại <abbr class="required" title="bắt buộc">*</abbr></label><input type="tel" class="input-text " name="phone" id="phone" placeholder="" autocomplete="tel" value="" required="required">
                 </p>
 
                 <p class="validate-required" id="billing_city_field" >
                     <label for="billing_city" >Tỉnh/Thành phố <abbr class="required" title="bắt buộc">*</abbr></label>
 
-                    <select name="city" id="city" class="input-text" data-placeholder="Chọn tỉnh/thành phố" tabindex="-1" title="Tỉnh/Thành phố *">
+                    <select name="city" id="city" class="input-text" data-placeholder="Chọn tỉnh/thành phố" tabindex="-1" title="Tỉnh/Thành phố *" required="required">
                         <option value="">--</option>
                         <option value="Hà Nội">Hà Nội</option>
                         <option value="Hà Giang">Hà Giang</option>
@@ -99,18 +99,18 @@
                 <p class="validate-required" id="billing_city_field">
                     <label for="billing_city" class="">Quận/Huyện<abbr class="required" title="bắt buộc">*</abbr></label>
 
-                    <input type="text" class="input-text" name="district" id="street" placeholder="" autocomplete="tel" value="">
+                    <input type="text" class="input-text" name="district" id="street" placeholder="" autocomplete="tel" value="" required="required">
                 </p>
 
                 <p class="validate-required" id="billing_city_field">
                     <label for="billing_city" class="">Xã/Phường/thị trấn <abbr class="required" title="bắt buộc">*</abbr></label>
 
-                    <input type="text" class="input-text" name="ward" id="street" placeholder="" autocomplete="tel" value="">
+                    <input type="text" class="input-text" name="ward" id="street" placeholder="" autocomplete="tel" value="" required="required">
                 </p>
 
                 <p class="validate-required" id="billing_address_2_field">
                     <label for="billing_address_2" class="">Địa chỉ <abbr class="required" title="bắt buộc">*</abbr></label>
-                    <input type="text" class="input-text " name="street" id="billing_last_name" placeholder="VD: 20 Cầu Giấy, ..." value="">
+                    <input type="text" class="input-text " name="street" id="billing_last_name" placeholder="VD: 20 Cầu Giấy, ..." value="" required="required">
                 </p>
 
             </div>

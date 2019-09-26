@@ -37,6 +37,8 @@
                 </div>
                 @if (\Request::is('thanh-toan'))
                     
+                @elseif (\Request::is('dat-hang-thanh-cong'))
+
                 @else
                     @include('layouts.sidebar')
                 @endif
