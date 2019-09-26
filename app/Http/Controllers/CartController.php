@@ -53,7 +53,7 @@ class CartController extends Controller
                     "name"          => $product->name,
                     "quantity"      => 1,
                     "price"         => $this->roundPrice($product->offers()->value('price')),
-                    "photo"         => $photo->disk_name,
+                    "photo"         => $product->previewImage->disk_name,
                     "product_slug"  => $product->slug,
                     "category_slug" => $category->slug
                 ]
@@ -80,7 +80,7 @@ class CartController extends Controller
             "name" => $product->name,
             "quantity" => 1,
             "price" => $this->roundPrice($product->offers()->value('price')),
-            "photo" => $photo->disk_name,
+            "photo"         => $product->previewImage->disk_name,
             "product_slug" => $product->slug,
             "category_slug" => $category->slug
         ];
