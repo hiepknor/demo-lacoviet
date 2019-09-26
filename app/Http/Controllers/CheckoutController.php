@@ -124,7 +124,6 @@ class CheckoutController extends Controller
     public function saveOrderContent($orderId) {
         if ($orderId) {
             $cart = session('cart');
-
             foreach ($cart as $item) {
                 $orderContent = new OrderContent();
                 $offer = Offer::where('active', 1)

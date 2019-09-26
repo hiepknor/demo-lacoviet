@@ -80,6 +80,7 @@ class CartController extends Controller
             "name" => $product->name,
             "quantity" => 1,
             "price" => $product->offers()->value('price'),
+            "code"          => $product->slug,
             "photo"         => $product->previewImage->disk_name,
             "product_slug" => $product->slug,
             "category_slug" => $category->slug
