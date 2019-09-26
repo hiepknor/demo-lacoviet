@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
+use Mckenziearts\Shopper\Plugins\Catalogue\Models\Offer;
 use Mckenziearts\Shopper\Plugins\Orders\Models\Order;
+use Mckenziearts\Shopper\Plugins\Orders\Models\OrderContent;
 use Mckenziearts\Shopper\Plugins\Orders\Models\PaymentMethod;
 use Mckenziearts\Shopper\Plugins\Users\Models\User;
 use Mckenziearts\Shopper\Plugins\Users\Models\Address;
@@ -92,10 +94,14 @@ class CheckoutController extends Controller
 
         if (isset($lastRecord)) {
             $order->user_id = ($lastRecord->user_id + 1);
+            $order->id = ($lastRecord->id + 1);
         }
         else {
             $order->user_id = 1;
+            $order->id = 1;
         }
+
+        $orderId = $order->id;
 
         $order->status_id = 1;
         $order->order_number = $now."ORDER".$order->id;
@@ -108,7 +114,32 @@ class CheckoutController extends Controller
 
         $order->save();
 
+        // Save order content
+        $this->saveOrderContent($orderId);
+
         session()->flush();
         return redirect('dat-hang-thanh-cong');
+    }
+
+    public function saveOrderContent($orderId) {
+        if ($orderId) {
+            $cart = session('cart');
+
+            foreach ($cart as $item) {
+                $orderContent = new OrderContent();
+                $offer = Offer::where('active', 1)
+                    ->where('product_id', $item['id'])
+                    ->where('price', $item['price'])
+                    ->first();
+                $offerId = $offer->id;
+                $orderContent->offer_id = $offerId;
+                $orderContent->order_id = $orderId;
+                $orderContent->price = $item['price'];
+                $orderContent->old_price = 0;
+                $orderContent->quantity = $item['quantity'];
+                $orderContent->code = $item['code'];
+                $orderContent->save();
+            }
+        }
     }
 }

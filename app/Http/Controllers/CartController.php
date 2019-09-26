@@ -34,7 +34,6 @@ class CartController extends Controller
     public function addToCart($id)
     {
         $product = Product::find($id);
-        $photo = Media::find($id);
         $category = Category::find($product->category_id);
 
         if (!$this->product) {
@@ -52,7 +51,8 @@ class CartController extends Controller
                     "id"            => $id,
                     "name"          => $product->name,
                     "quantity"      => 1,
-                    "price"         => $this->roundPrice($product->offers()->value('price')),
+                    "price"         => $product->offers()->value('price'),
+                    "code"          => $product->slug,
                     "photo"         => $product->previewImage->disk_name,
                     "product_slug"  => $product->slug,
                     "category_slug" => $category->slug
@@ -79,7 +79,7 @@ class CartController extends Controller
             "id" => $id,
             "name" => $product->name,
             "quantity" => 1,
-            "price" => $this->roundPrice($product->offers()->value('price')),
+            "price" => $product->offers()->value('price'),
             "photo"         => $product->previewImage->disk_name,
             "product_slug" => $product->slug,
             "category_slug" => $category->slug
