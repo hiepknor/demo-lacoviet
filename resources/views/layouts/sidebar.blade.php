@@ -16,12 +16,12 @@
                                  alt="{{ $value['name'] }}"></a>
                     </div>
 
-                    <span class="quantity">{{ $value['quantity'] }} × <span class="woocommerce-Price-amount amount">{{ number_format($value['price'], 0, "", ".") }}<span>&nbsp;₫</span></span></span>
+                    <span class="quantity">{{ $value['quantity'] }} × <span class="woocommerce-Price-amount amount">{{ shopperMoney($value['price'], setting('site_currency')) }}<span></span></span></span>
                 </li>
             @endforeach
         </ul>
 
-        <p class="total center"><strong>Tổng cộng:</strong> <span class="woocommerce-Price-amount amount">{{ number_format($total, 0, "", ".") }}<span>&nbsp;₫</span></span></p>
+        <p class="total center"><strong>Tổng cộng:</strong> <span class="woocommerce-Price-amount amount">{{ shopperMoney($total, setting('site_currency')) }}<span></span></span></p>
 
         <p class="buttons">
             <a href="{{ route('gio-hang') }}" class="view-cart center">Xem giỏ hàng</a>

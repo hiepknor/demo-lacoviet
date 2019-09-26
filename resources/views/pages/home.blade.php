@@ -19,9 +19,9 @@
                             @if($offer->where('product_id', $item->id)->value('old_price') == 0)
                                 <span class="unit-price center"></span>
                             @else
-                                <span class="unit-price center">{{ formatPrice($offer->where('product_id', $item->id)->value('old_price')) }} ₫</span>
+                                <span class="unit-price center">{{ shopperMoney($offer->where('product_id', $item->id)->value('old_price'), setting('site_currency')) }}</span>
                             @endif
-                            <span class="promotion-price center">{{ formatPrice($offer->where('product_id', $item->id)->value('price')) }} ₫</span>
+                            <span class="promotion-price center">{{ shopperMoney($offer->where('product_id', $item->id)->value('price'), setting('site_currency')) }}</span>
                         </div>
                     </a>
                     <a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $item->id) }}">
