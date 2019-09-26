@@ -11,7 +11,7 @@
     <div class="grid-products all-products">
         @foreach($product as $item)
             <div class="grid-item">
-                <a class="item-link" href="" title="{{ $item->name }}">
+                <a class="item-link" href="{{ 'san-pham'. '/' .$category->where('id', $item->category_id)->value('slug'). '/' .$item->slug }}" title="{{ $item->name }}">
                     <div class="item-thumb">
                         <img src="{{ asset('storage/uploads/public/'.$item->previewImage->disk_name) }}">
                     </div>

@@ -35,6 +35,7 @@ class ProductController extends Controller
     public function index() {
         return view('pages.product', [
             'all_categories' => $this->category->get(),
+            'category' =>  $this->category,
             'product' => $this->product->get(),
             'offer' => $this->offer
         ]);

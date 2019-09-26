@@ -269,7 +269,6 @@ main {
     z-index: 4;
     transition: all 0.8s;
     margin: 0;
-    padding: 13px 0;
 }
 .slider-nav .item .img-fill {
     height: 70px;
@@ -377,7 +376,7 @@ main {
 }
 
 .product-information .specific-info {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .product-description .description-label h3 {
