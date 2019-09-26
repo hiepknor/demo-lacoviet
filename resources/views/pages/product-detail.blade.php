@@ -29,8 +29,12 @@
 			<div>
 				<span>Giá bán: </span>
 				<span class="regular-price">{{ number_format($productPrice->value('price'), 0, "", ".") }} đ</span><br>
-				<span>Tiết kiệm: <span style="color:red;">{{ number_format(($productPrice->value('old_price') - $productPrice->value('price')) / $productPrice->value('old_price') * 100, 1, ".", "") }}%</span> </span>
-				<span class="old-price">{{ number_format($productPrice->value('old_price'), 0, "", ".") }}đ</span>
+				@if($productPrice->value('old_price'))
+					<span>Tiết kiệm: 
+						<span style="color:red;">{{ number_format(($productPrice->value('old_price') - $productPrice->value('price')) / $productPrice->value('old_price') * 100, 1, ".", "") }}%</span> 
+					</span>
+					<span class="old-price">{{ number_format($productPrice->value('old_price'), 0, "", ".") }}đ</span>
+				@endif
 			</div>
 		</div>
 
