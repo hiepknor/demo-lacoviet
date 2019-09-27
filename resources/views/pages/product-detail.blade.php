@@ -59,7 +59,7 @@
 	</div>
 
 	<div class="description-text">
-		{{ strip_tags($product->value('description')) }}
+		<?php echo html_entity_decode($product->value('description')); ?>
 	</div>
 
 	<div class="like-share" style="margin:15px 0px;text-align: right;">
