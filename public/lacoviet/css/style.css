@@ -1523,6 +1523,7 @@ footer {
     /* Main content */
     .item-thumb {
         overflow: hidden;
+        max-height: 240px;
     }
 
     .item-thumb > img {
