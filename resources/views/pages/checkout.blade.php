@@ -133,7 +133,7 @@
 
                                 <label for="payment-method-name">{{ $method->name }}</label><br>
                                 <div class="payment-method-desc" id="payment-method-text">
-                                    <p>{{ $method->description }}</p>
+                                    <?php echo $method->description; ?>
                                 </div>
                             </li>
                         @endforeach
