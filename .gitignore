@@ -3,7 +3,8 @@
 /public/storage
 /public/shopper
 /storage/*.key
-/vendor
+/vendor/*
+!/vendor/mckenziearts/shopper/resources/views/pages/orders/index.blade.php
 .env
 .phpunit.result.cache
 Homestead.json
