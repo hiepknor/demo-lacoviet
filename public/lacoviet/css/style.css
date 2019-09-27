@@ -384,8 +384,12 @@ main {
 }
 
 .product-description .description-text {
-    padding: 15px 0px;
+    padding: 15px 0;
     line-height: 20px;
+}
+
+.product-description .description-text img {
+    max-width: 100%;
 }
 
 /* Cart page */
