@@ -9,14 +9,14 @@
 			<div class="slider-for">
 				<div>
 					<div class="item">
-						<div class="img-fill"><img src="{{ asset('storage/uploads/public/'.$media->value('disk_name')) }}" alt="Son sap 1"></div>
+						<div class="img-fill"><img src="{{ asset('storage/uploads/public/'.$product->previewImage->disk_name) }}" alt="Son sap 1"></div>
 					</div>
 				</div>
 			</div>
 			<div class="slider-nav">
 				<div>
 					<div class="item">
-						<div class="img-fill"><img src="{{ asset('storage/uploads/public/'.$media->value('disk_name')) }}" alt="Son sap 1"></div>
+						<div class="img-fill"><img src="{{ asset('storage/uploads/public/'.$product->previewImage->disk_name) }}" alt="Son sap 1"></div>
 					</div>
 				</div>
 			</div>
@@ -30,8 +30,8 @@
 				<span>Giá bán: </span>
 				<span class="regular-price">{{ number_format($productPrice->value('price'), 0, "", ".") }} đ</span><br>
 				@if($productPrice->value('old_price'))
-					<span>Tiết kiệm: 
-						<span style="color:red;">{{ number_format(($productPrice->value('old_price') - $productPrice->value('price')) / $productPrice->value('old_price') * 100, 1, ".", "") }}%</span> 
+					<span>Tiết kiệm:
+						<span style="color:red;">{{ number_format(($productPrice->value('old_price') - $productPrice->value('price')) / $productPrice->value('old_price') * 100, 1, ".", "") }}%</span>
 					</span>
 					<span class="old-price">{{ number_format($productPrice->value('old_price'), 0, "", ".") }}đ</span>
 				@endif
