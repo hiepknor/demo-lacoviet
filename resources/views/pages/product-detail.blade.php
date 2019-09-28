@@ -23,7 +23,7 @@
 		</div>
 	</div>
 	<div class="specific-info">
-		<h4 class="info-name">{{ $product->value('name') }}</h4>
+		<h4 class="info-name">{{ $product->name }}</h4>
 		<div class="info-price">
 			<span><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Lượt xem: 123</span>
 			<div>
@@ -39,7 +39,7 @@
 		</div>
 
 		<div>
-			<a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $product->value('id')) }}">
+			<a class="add-to-cart center" href="{{ URL::to('them-gio-hang/' . $product->id) }}">
 				<span><i class="fa fa-cart-plus" aria-hidden="true"></i>Đặt mua ngay</span>
 			</a>
 		</div>
@@ -59,7 +59,7 @@
 	</div>
 
 	<div class="description-text">
-		<?php echo html_entity_decode($product->value('description')); ?>
+		<?php echo html_entity_decode($product->description); ?>
 	</div>
 
 	<div class="like-share" style="margin:15px 0px;text-align: right;">
