@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Category;
 use Mckenziearts\Shopper\Plugins\Catalogue\Models\Offer;
 use Mckenziearts\Shopper\Plugins\Orders\Models\Order;
@@ -116,6 +118,10 @@ class CheckoutController extends Controller
 
         // Save order content
         $this->saveOrderContent($orderId);
+
+        $orderItem = Order::find($orderId);
+
+        Mail::to('hiepknor@gmail.com')->send(new OrderNotification($orderItem));
 
         session()->flush();
         return redirect('dat-hang-thanh-cong');
